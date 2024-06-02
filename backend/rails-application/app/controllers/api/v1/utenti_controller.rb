@@ -1,4 +1,17 @@
 class Api::V1::UtentiController < ApplicationController
+  
+  def show_by_username
+    logger.warn "It works!"
+    utente = Utenti.find_by(username: params[:username])
+    if utente
+      render json: utente, status: 200
+    else
+      render json:{
+        error:"show_by_username: Utente non trovato."
+      }  
+    end
+  end
+  
   def index
     utenti = Utenti.all
     render json: utenti, status: 200
@@ -14,7 +27,7 @@ class Api::V1::UtentiController < ApplicationController
       }  
     end
   end
-
+  
   def create
     utenti = Utenti.new(
       username: utenti_params[:username],
@@ -31,7 +44,7 @@ class Api::V1::UtentiController < ApplicationController
       }
     end
   end
-
+  
   def update
     utenti = Utenti.find_by(id: params[:id])
     if utenti
@@ -53,7 +66,7 @@ class Api::V1::UtentiController < ApplicationController
       render json: "Destroy: Utente non trovato."  
     end
   end
-
+  
   def search
   end
 
@@ -64,7 +77,7 @@ class Api::V1::UtentiController < ApplicationController
       :nome,
       :cognome,
       :data_nascita
-    ])  
+      ])  
+    end
+    
   end
-
-end

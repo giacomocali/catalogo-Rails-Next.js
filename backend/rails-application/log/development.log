@@ -145,3 +145,426 @@ Processing by Api::V1::UtentiController#index as */*
 Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.9ms | Allocations: 887)
 
 
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "rails-application" ENCODING = 'utf8'[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProdottis (20240602091100)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "prodottis" ("id" bigserial primary key, "nome_oggetto" character varying, "descrizione" text, "data_inserimento" timestamp(6), "tipo_prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_4f68683c64"
+FOREIGN KEY ("tipo_prodotto_id")
+  REFERENCES "tipo_prodottos" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProdottis (20240602091100)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "prodottis" ("id" bigserial primary key, "nome_oggetto" character varying, "descrizione" text, "data_inserimento" timestamp(6), "tipo_prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_4f68683c64"
+FOREIGN KEY ("tipo_prodotto_id")
+  REFERENCES "tipo_prodottos" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProdottis (20240602091100)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "prodottis" ("id" bigserial primary key, "nome_oggetto" character varying, "descrizione" text, "data_inserimento" timestamp(6), "tipo_prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_4f68683c64"
+FOREIGN KEY ("tipo_prodotto_id")
+  REFERENCES "tipo_prodottos" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProdottis (20240602091100)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "prodottis" ("id" bigserial primary key, "nome_oggetto" character varying, "descrizione" text, "data_inserimento" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240602091100') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTipoProdottos (20240602091738)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "tipo_prodottos" ("id" bigserial primary key, "tipo" character varying, "prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e4733622a2"
+FOREIGN KEY ("prodotto_id")
+  REFERENCES "prodottos" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateTipoProdottos (20240602091738)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "tipo_prodottos" ("id" bigserial primary key, "tipo" character varying, "prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e4733622a2"
+FOREIGN KEY ("prodotto_id")
+  REFERENCES "prodottos" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateTipoProdottos (20240602091738)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "tipo_prodottos" ("id" bigserial primary key, "tipo" character varying, "prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e4733622a2"
+FOREIGN KEY ("prodotto_id")
+  REFERENCES "prodottos" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProdottis (20240602101746)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "prodottis" ("id" bigserial primary key, "nome_oggetto" character varying, "descrizione" text, "data_inserimento" timestamp(6), "tipo_prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_4f68683c64"
+FOREIGN KEY ("tipo_prodotto_id")
+  REFERENCES "tipo_prodottos" ("id")
+)[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProdottis (20240602101746)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "prodottis" ("id" bigserial primary key, "nome_oggetto" character varying, "descrizione" text, "data_inserimento" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/utenti/" for ::1 at 2024-06-02 16:57:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#index as */*
+  [1m[36mUtenti Load (1.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:4:in `index'
+Completed 200 OK in 223ms (Views: 168.7ms | ActiveRecord: 13.8ms | Allocations: 146045)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-02 17:06:01 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (29.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: -1.4ms | ActiveRecord: 33.6ms | Allocations: 3981)
+
+
+Started GET "/api/v1/utenti/findUserByUsername" for ::1 at 2024-06-02 18:03:01 +0200
+  
+SyntaxError (/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...get '/findUserByUsername', to "api/v1/utenti_controller#find...
+...                              ^
+):
+  
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started GET "/api/v1/utenti/find_user_by_username" for ::1 at 2024-06-02 18:05:32 +0200
+  
+SyntaxError (/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...ti/find_user_by_username', to "api/v1/utenti_controller#find...
+...                              ^
+):
+  
+config/routes.rb:4: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started GET "/api/v1/utenti/find_user_by_username" for ::1 at 2024-06-02 18:06:18 +0200
+  
+SyntaxError (/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...ti/find_user_by_username', to "api/v1/utenti_controller#find...
+...                              ^
+):
+  
+config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started OPTIONS "/" for ::1 at 2024-06-02 18:08:48 +0200
+  
+SyntaxError (/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...ti/find_user_by_username', to "api/v1/utenti_controller#find...
+...                              ^
+):
+  
+config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started OPTIONS "/" for ::1 at 2024-06-02 18:09:00 +0200
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/"):
+  
+Started GET "/api/v1/utenti/admin" for ::1 at 2024-06-02 18:11:27 +0200
+  
+SyntaxError (/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...'api/v1/utenti/:username', to "api/v1/utenti_controller#find...
+...                              ^
+):
+  
+config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started GET "/api/v1/utenti/admin" for ::1 at 2024-06-02 18:11:41 +0200
+  
+SyntaxError (/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+  get 'api/v1/:username', to "api/v1/utenti_controller#find...
+                             ^
+):
+  
+config/routes.rb:10: syntax error, unexpected string literal, expecting `do' or '{' or '('
+Started GET "/api/v1/utenti/find_user?username=%22admin%22" for ::1 at 2024-06-02 18:45:51 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"username"=>"\"admin\"", "id"=>"find_user"}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 4.0ms | Allocations: 5872)
+
+
+Started GET "/api/v1/utenti/find_user?username=admin" for ::1 at 2024-06-02 18:45:57 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"username"=>"admin", "id"=>"find_user"}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 596)
+
+
+Started GET "/api/v1/utenti/find_user/?username=admin" for ::1 at 2024-06-02 18:46:28 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"username"=>"admin", "id"=>"find_user"}
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 582)
+
+
+Started GET "/api/v1/utenti/find_user/?username=admin" for ::1 at 2024-06-02 18:46:50 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"username"=>"admin", "id"=>"find_user"}
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 2323)
+
+
+Started GET "/api/v1/utenti/find_user?username=admin" for ::1 at 2024-06-02 18:46:54 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"username"=>"admin", "id"=>"find_user"}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 584)
+
+
+Started GET "/api/v1/utenti/?username=admin" for ::1 at 2024-06-02 18:46:59 +0200
+Processing by Api::V1::UtentiController#index as */*
+  Parameters: {"username"=>"admin"}
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:17:in `index'
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 4.0ms | Allocations: 4152)
+
+
+Started GET "/api/v1/utenti/" for ::1 at 2024-06-02 18:47:19 +0200
+Processing by Api::V1::UtentiController#index as */*
+  [1m[36mUtenti Load (0.9ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:17:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 857)
+
+
+Started GET "/api/v1/utenti/username?=admin" for ::1 at 2024-06-02 18:47:30 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"id"=>"username"}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 566)
+
+
+Started GET "/api/v1/utenti/show_by_username/admin" for ::1 at 2024-06-02 19:16:08 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show_by_username as */*
+  Parameters: {"username"=>"admin"}
+It works!
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 17.0ms | Allocations: 148601)
+
+
+  
+NameError (undefined local variable or method `utenti' for #<Api::V1::UtentiController:0x0000000000a820>
+Did you mean?  utente):
+  
+app/controllers/api/v1/utenti_controller.rb:6:in `show_by_username'
+Started GET "/api/v1/show_by_username/admin" for ::1 at 2024-06-02 19:18:20 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/show_by_username/admin"):
+  
+Started GET "/api/v1/utenti/admin" for ::1 at 2024-06-02 19:18:36 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"id"=>"admin"}
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 2415)
+
+
+Started GET "/api/v1/utenti/?username=admin" for ::1 at 2024-06-02 19:18:47 +0200
+Processing by Api::V1::UtentiController#index as */*
+  Parameters: {"username"=>"admin"}
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:17:in `index'
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 2.6ms | Allocations: 4294)
+
+
+Started GET "/api/v1/utenti/?username=%22admin%22" for ::1 at 2024-06-02 19:19:13 +0200
+Processing by Api::V1::UtentiController#index as */*
+  Parameters: {"username"=>"\"admin\""}
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:17:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 865)
+
+
+Started GET "/api/v1/utenti/?username=%22simone66%22" for ::1 at 2024-06-02 19:19:24 +0200
+Processing by Api::V1::UtentiController#index as */*
+  Parameters: {"username"=>"\"simone66\""}
+  [1m[36mUtenti Load (0.9ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:17:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 857)
+
+
+Started GET "/api/v1/utenti/?username=simone66" for ::1 at 2024-06-02 19:19:37 +0200
+Processing by Api::V1::UtentiController#index as */*
+  Parameters: {"username"=>"simone66"}
+  [1m[36mUtenti Load (0.8ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:17:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.8ms | Allocations: 857)
+
+
+Started GET "/api/v1/utenti/username=simone66" for ::1 at 2024-06-02 19:19:55 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"id"=>"username=simone66"}
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 583)
+
+
+Started GET "/api/v1/utenti/simone66" for ::1 at 2024-06-02 19:20:02 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"id"=>"simone66"}
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 582)
+
+
+Started GET "/api/v1/utenti/show_by_username/simone66" for ::1 at 2024-06-02 19:21:20 +0200
+  
+ActionController::RoutingError (uninitialized constant Api::V1::Api):
+  
+Started GET "/api/v1/utenti/show_by_username/simone66" for ::1 at 2024-06-02 19:21:42 +0200
+Processing by Api::V1::UtentiController#show_by_username as */*
+  Parameters: {"username"=>"simone66"}
+It works!
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "simone66"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.4ms | Allocations: 7412)
+
+
+  
+NameError (undefined local variable or method `utenti' for #<Api::V1::UtentiController:0x00000000018da8>
+Did you mean?  utente):
+  
+app/controllers/api/v1/utenti_controller.rb:6:in `show_by_username'
+Started GET "/api/v1/utenti/show_by_username/simone66" for ::1 at 2024-06-02 19:21:53 +0200
+  
+ActionController::RoutingError (uninitialized constant Api::V1::UtenteController
+Did you mean?  Api::V1::UtentiController):
+  
+Started GET "/api/v1/utenti/show_by_username/simone66" for ::1 at 2024-06-02 19:22:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::V1::UtenteController
+Did you mean?  Api::V1::UtentiController):
+  
+Started GET "/api/v1/utenti/show_by_username/simone66" for ::1 at 2024-06-02 19:23:18 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show_by_username as */*
+  Parameters: {"username"=>"simone66"}
+It works!
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "simone66"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 8.1ms | Allocations: 148602)
+
+
+  
+NameError (undefined local variable or method `utenti' for #<Api::V1::UtentiController:0x0000000000a820>
+Did you mean?  utente):
+  
+app/controllers/api/v1/utenti_controller.rb:6:in `show_by_username'
+Started GET "/api/v1/utenti/show_by_username/simone66" for ::1 at 2024-06-02 19:24:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show_by_username as */*
+  Parameters: {"username"=>"simone66"}
+It works!
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "simone66"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 12.5ms | Allocations: 148601)
+
+
+  
+NameError (undefined local variable or method `utenti' for #<Api::V1::UtentiController:0x0000000000a820>
+Did you mean?  utente):
+  
+app/controllers/api/v1/utenti_controller.rb:7:in `show_by_username'
+Started GET "/api/v1/utenti/show_by_username/simone66" for ::1 at 2024-06-02 19:25:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show_by_username as */*
+  Parameters: {"username"=>"simone66"}
+It works!
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "simone66"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 219ms (Views: 0.5ms | ActiveRecord: 14.6ms | Allocations: 146886)
+
+
+Started GET "/api/v1/utenti/show_by_username/simone66" for 127.0.0.1 at 2024-06-02 19:58:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"simone66"}
+It works!
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "simone66"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 282ms (Views: 1.2ms | ActiveRecord: 10.9ms | Allocations: 146895)
+
+
+Started GET "/api/v1/utenti/s" for ::1 at 2024-06-02 19:59:50 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"id"=>"s"}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:21:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 892)
+
+
+Started GET "/api/v1/utenti/" for ::1 at 2024-06-02 19:59:51 +0200
+Processing by Api::V1::UtentiController#index as */*
+  [1m[36mUtenti Load (0.8ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:17:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 920)
+
+
+Started GET "/api/v1/utenti/show_by_username/maurobianchi47" for 127.0.0.1 at 2024-06-02 19:59:59 +0200
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"maurobianchi47"}
+It works!
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "maurobianchi47"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 647)
+
+
+Started GET "/api/v1/utenti/show_by_username/maurobianchi47" for 127.0.0.1 at 2024-06-02 21:30:32 +0200
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"maurobianchi47"}
+It works!
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "maurobianchi47"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 5.9ms | Allocations: 3684)
+
+

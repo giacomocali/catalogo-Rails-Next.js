@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :utenti, only: [:index, :show, :create, :update, :destroy]
+      resources :tipo_prodotto, only: [:index, :show, :create, :update, :destroy]
+      resources :prodotti, only: [:index, :show, :create, :update, :destroy]
+      resources :utenti, only: [:index, :show, :create, :update, :destroy] do
+        collection do
+          get 'show_by_username/:username', to: 'utenti#show_by_username', as: :show_by_username
+        end
+      end
     end
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end
