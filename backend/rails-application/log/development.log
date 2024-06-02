@@ -1,0 +1,147 @@
+  [1m[35m (51.7ms)[0m  [1m[35mCREATE DATABASE "rails-application" ENCODING = 'utf8'[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (10.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-06-01 21:50:32.314880', '2024-06-01 21:50:32.314884') RETURNING "key"[0m
+Migrating to CreateUtentis (20240601214810)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "utentis" ("id" bigserial primary key, "username" character varying, "password" character varying, "nome" character varying, "cognome" character varying, "data_nascita" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240601214810') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/utenti/" for ::1 at 2024-06-01 23:52:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "nome"=>" ", "cognome"=>" ", "data_nascita"=>"00-00-0000", "utenti"=>{"username"=>"admin", "password"=>"[FILTERED]", "nome"=>" ", "cognome"=>" ", "data_nascita"=>"00-00-0000"}}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 5.0ms | Allocations: 22573)
+
+
+  
+NameError (undefined local variable or method `utente_params' for #<Api::V1::UtentiController:0x00000000009218>
+Did you mean?  utenti_params):
+  
+app/controllers/api/v1/utenti_controller.rb:10:in `create'
+Started POST "/api/v1/utenti/" for ::1 at 2024-06-01 23:53:15 +0200
+Processing by Api::V1::UtentiController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "nome"=>" ", "cognome"=>" ", "data_nascita"=>"00-00-0000", "utenti"=>{"username"=>"admin", "password"=>"[FILTERED]", "nome"=>" ", "cognome"=>" ", "data_nascita"=>"00-00-0000"}}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:16:in `create'
+  [1m[36mUtenti Create (2.9ms)[0m  [1m[32mINSERT INTO "utentis" ("username", "password", "nome", "cognome", "data_nascita", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "admin"], ["password", "[FILTERED]"], ["nome", " "], ["cognome", " "], ["data_nascita", nil], ["created_at", "2024-06-01 21:53:15.586427"], ["updated_at", "2024-06-01 21:53:15.586427"]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:16:in `create'
+Completed 200 OK in 86ms (Views: 0.5ms | ActiveRecord: 7.1ms | Allocations: 113418)
+
+
+Started POST "/api/v1/utenti/" for ::1 at 2024-06-02 10:14:15 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#create as */*
+  Parameters: {"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"14/5/1990", "utenti"=>{"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"14/5/1990"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:26:in `create'
+  [1m[36mUtenti Create (2.3ms)[0m  [1m[32mINSERT INTO "utentis" ("username", "password", "nome", "cognome", "data_nascita", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "maurobianchi47"], ["password", "[FILTERED]"], ["nome", "Mauro"], ["cognome", "Bianchi"], ["data_nascita", "1990-05-14"], ["created_at", "2024-06-02 08:14:15.255511"], ["updated_at", "2024-06-02 08:14:15.255511"]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:26:in `create'
+Completed 200 OK in 90ms (Views: 1.1ms | ActiveRecord: 10.5ms | Allocations: 132814)
+
+
+Started GET "/api/v1/utenti/" for ::1 at 2024-06-02 10:14:37 +0200
+Processing by Api::V1::UtentiController#index as */*
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 4372)
+
+
+Started PUT "/api/v1/utenti/" for ::1 at 2024-06-02 10:15:18 +0200
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/utenti"):
+  
+Started PUT "/api/v1/utenti/2" for ::1 at 2024-06-02 10:15:51 +0200
+Processing by Api::V1::UtentiController#update as */*
+  Parameters: {"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"17/5/1990", "id"=>"2", "utenti"=>{"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"17/5/1990"}}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:36:in `update'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms | Allocations: 3778)
+
+
+  
+TypeError (can't cast Array):
+  
+app/controllers/api/v1/utenti_controller.rb:38:in `update'
+Started PUT "/api/v1/utenti/2" for ::1 at 2024-06-02 10:22:12 +0200
+Processing by Api::V1::UtentiController#update as */*
+  Parameters: {"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"17/5/1990", "id"=>"2", "utenti"=>{"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"17/5/1990"}}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:36:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 3.5ms | Allocations: 4739)
+
+
+  
+TypeError (can't cast Array):
+  
+app/controllers/api/v1/utenti_controller.rb:38:in `update'
+Started GET "/api/v1/utenti/2" for ::1 at 2024-06-02 10:43:06 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:8:in `show'
+Completed 200 OK in 34ms (Views: 0.7ms | ActiveRecord: 4.2ms | Allocations: 8204)
+
+
+Started PUT "/api/v1/utenti/2" for ::1 at 2024-06-02 10:43:35 +0200
+Processing by Api::V1::UtentiController#update as */*
+  Parameters: {"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"22/5/1990", "id"=>"2", "utenti"=>{"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"22/5/1990"}}
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:36:in `update'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 1111)
+
+
+  
+TypeError (can't cast Array):
+  
+app/controllers/api/v1/utenti_controller.rb:38:in `update'
+Started PUT "/api/v1/utenti/2" for ::1 at 2024-06-02 10:47:06 +0200
+Processing by Api::V1::UtentiController#update as */*
+  Parameters: {"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"22/5/1990", "id"=>"2", "utenti"=>{"username"=>"maurobianchi47", "password"=>"[FILTERED]", "nome"=>"Mauro", "cognome"=>"Bianchi", "data_nascita"=>"22/5/1990"}}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:36:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:38:in `update'
+  [1m[36mUtenti Update (2.0ms)[0m  [1m[33mUPDATE "utentis" SET "data_nascita" = $1, "updated_at" = $2 WHERE "utentis"."id" = $3[0m  [["data_nascita", "1990-05-22"], ["updated_at", "2024-06-02 08:47:06.341176"], ["id", 2]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:38:in `update'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 9.1ms | Allocations: 6136)
+
+
+Started GET "/api/v1/utenti/2" for ::1 at 2024-06-02 10:47:40 +0200
+Processing by Api::V1::UtentiController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 675)
+
+
+Started POST "/api/v1/utenti/" for ::1 at 2024-06-02 10:51:17 +0200
+Processing by Api::V1::UtentiController#create as */*
+  Parameters: {"username"=>"simone66", "password"=>"[FILTERED]", "nome"=>"Simone", "cognome"=>"Rossi", "data_nascita"=>"6/1/2001", "utenti"=>{"username"=>"simone66", "password"=>"[FILTERED]", "nome"=>"Simone", "cognome"=>"Rossi", "data_nascita"=>"6/1/2001"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:26:in `create'
+  [1m[36mUtenti Create (2.5ms)[0m  [1m[32mINSERT INTO "utentis" ("username", "password", "nome", "cognome", "data_nascita", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "simone66"], ["password", "[FILTERED]"], ["nome", "Simone"], ["cognome", "Rossi"], ["data_nascita", "2001-01-06"], ["created_at", "2024-06-02 08:51:17.090289"], ["updated_at", "2024-06-02 08:51:17.090289"]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:26:in `create'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 13.1ms | Allocations: 2225)
+
+
+Started GET "/api/v1/utenti/" for ::1 at 2024-06-02 10:51:26 +0200
+Processing by Api::V1::UtentiController#index as */*
+  [1m[36mUtenti Load (0.9ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.9ms | Allocations: 887)
+
+
