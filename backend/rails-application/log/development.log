@@ -568,3 +568,22 @@ It works!
 Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 5.9ms | Allocations: 3684)
 
 
+Started GET "/api/v1/utenti/show_by_username/simone66" for 127.0.0.1 at 2024-06-03 09:46:41 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"simone66"}
+It works!
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "simone66"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 179ms (Views: 0.4ms | ActiveRecord: 10.5ms | Allocations: 146884)
+
+
+Started GET "/api/v1/utenti/show_by_username/simone66" for 127.0.0.1 at 2024-06-03 09:49:07 +0200
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"simone66"}
+It works!
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "simone66"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 759)
+
+
