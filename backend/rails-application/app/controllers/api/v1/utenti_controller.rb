@@ -68,8 +68,8 @@ class Api::V1::UtentiController < ApplicationController
   end
   
   def search
+    render json: "Metodo search non implementato."
   end
-
   private def utenti_params
     params.require(:utenti).permit([
       :username,
@@ -78,6 +78,6 @@ class Api::V1::UtentiController < ApplicationController
       :cognome,
       :data_nascita
       ])  
-    end
     
   end
+end

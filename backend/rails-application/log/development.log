@@ -641,3 +641,318 @@ It works!
 Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 3455)
 
 
+Started GET "/api/v1/utenti/show_by_username/admin" for 127.0.0.1 at 2024-06-03 22:41:06 +0200
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"admin"}
+It works!
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 3.1ms | Allocations: 3508)
+
+
+Started GET "/api/v1/prodotti/" for ::1 at 2024-06-03 22:46:31 +0200
+Processing by Api::V1::ProdottiController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 98)
+
+
+Started GET "/api/v1/prodotti/" for ::1 at 2024-06-03 22:47:15 +0200
+Processing by Api::V1::ProdottiController#index as */*
+  Parameters: {"id"=>1, "prodotti"=>{"id"=>1}}
+Completed 204 No Content in 0ms (ActiveRecord: 3.9ms | Allocations: 45)
+
+
+Started POST "/api/v1/prodotti/" for ::1 at 2024-06-03 22:47:44 +0200
+Processing by Api::V1::ProdottiController#create as */*
+  Parameters: {"id"=>1, "prodotti"=>{"id"=>1}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 21)
+
+
+Started PUT "/api/v1/prodotti/" for ::1 at 2024-06-03 22:47:58 +0200
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/prodotti"):
+  
+Started DELETE "/api/v1/prodotti/" for ::1 at 2024-06-03 22:48:14 +0200
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/prodotti"):
+  
+Started GET "/api/v1/prodotti/" for ::1 at 2024-06-03 22:49:36 +0200
+  
+SyntaxError (/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/app/controllers/api/v1/prodotti_controller.rb:9: syntax error, unexpected ')', expecting `end'
+...  puts "Show route is working")
+...                              ^
+/home/dstance/Scrivania/dev-fullstack/progettoweb-eramus/backend/rails-application/app/controllers/api/v1/prodotti_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/api/v1/prodotti_controller.rb:9: syntax error, unexpected ')', expecting `end'
+app/controllers/api/v1/prodotti_controller.rb:23: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/api/v1/prodotti/" for ::1 at 2024-06-03 22:49:43 +0200
+Processing by Api::V1::ProdottiController#index as */*
+  [1m[36mProdotti Load (4.1ms)[0m  [1m[34mSELECT "prodottis".* FROM "prodottis"[0m
+  ↳ app/controllers/api/v1/prodotti_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 4.1ms | Allocations: 3004)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (11.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateTipoProdottos (20240603215745)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "tipo_prodottos" ("id" bigserial primary key, "tipo" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240603215745') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProdottos (20240603215838)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "prodottos" ("id" bigserial primary key, "nome_oggetto" character varying NOT NULL, "descrizione" text, "tipo_prodotto_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_567a90e24c"
+FOREIGN KEY ("tipo_prodotto_id")
+  REFERENCES "tipo_prodottos" ("id")
+)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_prodottos_on_tipo_prodotto_id" ON "prodottos" ("tipo_prodotto_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240603215838') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1734190257047743950)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/utenti/show_by_username/admin" for 127.0.0.1 at 2024-06-04 00:09:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"admin"}
+It works!
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 210ms (Views: 0.4ms | ActiveRecord: 8.7ms | Allocations: 146867)
+
+
+Started GET "/api/v1/utenti/show_by_username/admin" for 127.0.0.1 at 2024-06-04 00:09:47 +0200
+Processing by Api::V1::UtentiController#show_by_username as HTML
+  Parameters: {"username"=>"admin"}
+It works!
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:5:in `show_by_username'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 749)
+
+
+Started GET "/api/v1/prodotti/" for ::1 at 2024-06-04 11:50:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant Api::V1::ProdottiController
+Did you mean?  Api::V1::ProdottoController):
+  
+Started GET "/api/v1/prodotto/" for ::1 at 2024-06-04 11:52:42 +0200
+Processing by Api::V1::ProdottoController#index as */*
+  [1m[36mProdotto Load (2.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 58ms (Views: 18.8ms | ActiveRecord: 10.7ms | Allocations: 37288)
+
+
+Started GET "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 11:53:28 +0200
+Processing by Api::V1::TipoProdottoController#index as */*
+  [1m[36mTipoProdotto Load (1.3ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos"[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 1.6ms | ActiveRecord: 1.3ms | Allocations: 3367)
+
+
+Started POST "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 11:54:07 +0200
+Processing by Api::V1::TipoProdottoController#create as */*
+  Parameters: {"tipo"=>"toner", "tipo_prodotto"=>{"tipo"=>"toner"}}
+Completed 204 No Content in 0ms (ActiveRecord: 15.7ms | Allocations: 50)
+
+
+Started POST "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 11:56:22 +0200
+Processing by Api::V1::TipoProdottoController#create as */*
+  Parameters: {"tipo"=>"toner", "tipo_prodotto"=>{"tipo"=>"toner"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+  [1m[36mTipoProdotto Create (3.8ms)[0m  [1m[32mINSERT INTO "tipo_prodottos" ("tipo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tipo", "toner"], ["created_at", "2024-06-04 09:56:22.093830"], ["updated_at", "2024-06-04 09:56:22.093830"]]
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+Completed 200 OK in 52ms (Views: 0.3ms | ActiveRecord: 11.9ms | Allocations: 63576)
+
+
+Started POST "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 11:56:28 +0200
+Processing by Api::V1::TipoProdottoController#create as */*
+  Parameters: {"tipo"=>"carta", "tipo_prodotto"=>{"tipo"=>"carta"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+  [1m[36mTipoProdotto Create (2.3ms)[0m  [1m[32mINSERT INTO "tipo_prodottos" ("tipo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tipo", "carta"], ["created_at", "2024-06-04 09:56:28.196619"], ["updated_at", "2024-06-04 09:56:28.196619"]]
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 12.9ms | Allocations: 1961)
+
+
+Started POST "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 11:56:42 +0200
+Processing by Api::V1::TipoProdottoController#create as */*
+  Parameters: {"tipo"=>"buste", "tipo_prodotto"=>{"tipo"=>"buste"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+  [1m[36mTipoProdotto Create (1.1ms)[0m  [1m[32mINSERT INTO "tipo_prodottos" ("tipo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["tipo", "buste"], ["created_at", "2024-06-04 09:56:42.412329"], ["updated_at", "2024-06-04 09:56:42.412329"]]
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:15:in `create'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 11.8ms | Allocations: 1936)
+
+
+Started GET "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 11:56:48 +0200
+Processing by Api::V1::TipoProdottoController#index as */*
+  [1m[36mTipoProdotto Load (0.7ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos"[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 1001)
+
+
+Started GET "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 14:30:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TipoProdottoController#index as */*
+  [1m[36mTipoProdotto Load (0.4ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos"[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:4:in `index'
+Completed 200 OK in 75ms (Views: 29.7ms | ActiveRecord: 7.6ms | Allocations: 98551)
+
+
+Started GET "/api/v1/prodotto/" for ::1 at 2024-06-04 14:30:09 +0200
+Processing by Api::V1::ProdottoController#index as */*
+  [1m[36mProdotto Load (0.9ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.9ms | Allocations: 3394)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 14:32:49 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."}}
+Completed 200 OK in 122ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 43435)
+
+
+Started GET "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 14:33:15 +0200
+Processing by Api::V1::TipoProdottoController#index as */*
+  [1m[36mTipoProdotto Load (1.0ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos"[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.0ms | Allocations: 939)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 14:33:22 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto"=>2, "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 14:33:31 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto"=>"2", "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/api/v1/prodotto" for ::1 at 2024-06-04 14:43:37 +0200
+Processing by Api::V1::ProdottoController#index as */*
+  [1m[36mProdotto Load (19.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: -2.0ms | ActiveRecord: 23.1ms | Allocations: 3648)
+
+
+Started GET "/api/v1/tipo_prodotto" for ::1 at 2024-06-04 14:43:42 +0200
+Processing by Api::V1::TipoProdottoController#index as */*
+  [1m[36mTipoProdotto Load (0.7ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos"[0m
+  ↳ app/controllers/api/v1/tipo_prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 805)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 14:58:38 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2, "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2}}
+[31mUnpermitted parameter: :tipo_prodotto_id. Context: { controller: Api::V1::ProdottoController, action: create, request: #<ActionDispatch::Request:0x00007f7a48eb2610>, params: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2, "controller"=>"api/v1/prodotto", "action"=>"create", "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2}} }[0m
+[31mUnpermitted parameter: :tipo_prodotto_id. Context: { controller: Api::V1::ProdottoController, action: create, request: #<ActionDispatch::Request:0x00007f7a48eb2610>, params: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2, "controller"=>"api/v1/prodotto", "action"=>"create", "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2}} }[0m
+[31mUnpermitted parameter: :tipo_prodotto_id. Context: { controller: Api::V1::ProdottoController, action: create, request: #<ActionDispatch::Request:0x00007f7a48eb2610>, params: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2, "controller"=>"api/v1/prodotto", "action"=>"create", "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2}} }[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 932)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 14:58:50 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto"=>2, "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 14:59:40 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto"=>2}}
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 7.2ms | Allocations: 7962)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (TipoProdotto(#31380) expected, got 2 which is an instance of Integer(#2020)):
+  
+app/controllers/api/v1/prodotto_controller.rb:19:in `create'
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 14:59:54 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto"=>2, "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 546)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 15:38:18 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto"=>2, "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:23:in `create'
+Completed 200 OK in 58ms (Views: 0.2ms | ActiveRecord: 16.7ms | Allocations: 110444)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 15:44:24 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto"=>2, "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 656)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 15:49:10 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2, "prodotto"=>{"nome_oggetto"=>"500 Fogli A4", "descrizione"=>"500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTipoProdotto Load (0.3ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos" WHERE "tipo_prodottos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mProdotto Create (1.6ms)[0m  [1m[32mINSERT INTO "prodottos" ("nome_oggetto", "descrizione", "tipo_prodotto_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nome_oggetto", "500 Fogli A4"], ["descrizione", "500 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."], ["tipo_prodotto_id", 2], ["created_at", "2024-06-04 13:49:10.853259"], ["updated_at", "2024-06-04 13:49:10.853259"]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+Completed 200 OK in 102ms (Views: 0.3ms | ActiveRecord: 28.8ms | Allocations: 27631)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 15:49:36 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"200 Fogli A4", "descrizione"=>"Pacchetto di 200 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2, "prodotto"=>{"nome_oggetto"=>"200 Fogli A4", "descrizione"=>"Pacchetto di 200 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza.", "tipo_prodotto_id"=>2}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTipoProdotto Load (0.3ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos" WHERE "tipo_prodottos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mProdotto Create (0.5ms)[0m  [1m[32mINSERT INTO "prodottos" ("nome_oggetto", "descrizione", "tipo_prodotto_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nome_oggetto", "200 Fogli A4"], ["descrizione", "Pacchetto di 200 Fogli in formato A4, utilizzabili per casa, ufficio, o qualsiasi altra evenienza."], ["tipo_prodotto_id", 2], ["created_at", "2024-06-04 13:49:36.438764"], ["updated_at", "2024-06-04 13:49:36.438764"]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 11.4ms | Allocations: 2952)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 15:52:55 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"Cartuccia toner stampanti laser HP", "descrizione"=>"Toner compatibile con stampante HP LaserJet", "tipo_prodotto_id"=>1, "prodotto"=>{"nome_oggetto"=>"Cartuccia toner stampanti laser HP", "descrizione"=>"Toner compatibile con stampante HP LaserJet", "tipo_prodotto_id"=>1}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTipoProdotto Load (0.2ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos" WHERE "tipo_prodottos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mProdotto Create (0.4ms)[0m  [1m[32mINSERT INTO "prodottos" ("nome_oggetto", "descrizione", "tipo_prodotto_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nome_oggetto", "Cartuccia toner stampanti laser HP"], ["descrizione", "Toner compatibile con stampante HP LaserJet"], ["tipo_prodotto_id", 1], ["created_at", "2024-06-04 13:52:55.452625"], ["updated_at", "2024-06-04 13:52:55.452625"]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 11.0ms | Allocations: 2874)
+
+
+Started POST "/api/v1/prodotto/" for ::1 at 2024-06-04 15:54:50 +0200
+Processing by Api::V1::ProdottoController#create as */*
+  Parameters: {"nome_oggetto"=>"100x buste plastificate", "descrizione"=>"Pacchetto di 100 buste plastificate e trasparenti, 22x30 cm.", "tipo_prodotto_id"=>3, "prodotto"=>{"nome_oggetto"=>"100x buste plastificate", "descrizione"=>"Pacchetto di 100 buste plastificate e trasparenti, 22x30 cm.", "tipo_prodotto_id"=>3}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTipoProdotto Load (0.3ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos" WHERE "tipo_prodottos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mProdotto Create (0.5ms)[0m  [1m[32mINSERT INTO "prodottos" ("nome_oggetto", "descrizione", "tipo_prodotto_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nome_oggetto", "100x buste plastificate"], ["descrizione", "Pacchetto di 100 buste plastificate e trasparenti, 22x30 cm."], ["tipo_prodotto_id", 3], ["created_at", "2024-06-04 13:54:50.702508"], ["updated_at", "2024-06-04 13:54:50.702508"]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 11.3ms | Allocations: 2891)
+
+

@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Api::V1::TipoProdottoControllerTest < ActionDispatch::IntegrationTest
+class ProdottoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
