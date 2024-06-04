@@ -21,7 +21,6 @@ export function Header(){
             </div>
             <div className="it-header-slim-right-zone">
               <div className="it-access-top-wrapper">
-                <a className="btn btn-primary btn-sm" href="#">Accedi</a>
               </div>
             </div>
           </div>

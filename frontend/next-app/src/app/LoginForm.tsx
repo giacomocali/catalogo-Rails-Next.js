@@ -1,41 +1,42 @@
 "use client";
-import { checkLogin } from "./checkLogin";
+import { checkLogin } from "./UserActions";
 import { useState, useEffect } from "react";
 import { SuccessAlert, ErrorAlert } from "../components/Alerts";
-import { loadPageDelayed } from "@/components/loadPageDelayed";
+import { loadPageDelayed } from "./loadPageDelayed";
 // export function renderAlert(success: boolean) {
-  //   setSuccess(success);
-  // }
-  
+//   setSuccess(success);
+// }
 
-  
-  export function LoginForm() {
+export function LoginForm() {
   const [success, setSuccess] = useState(false);
   const [successChanged, setSuccessChanged] = useState(false);
 
-  function renderAlert(){
-    if(successChanged){
-      if(success) {
-        loadPageDelayed("user_list", 10);
-        return <SuccessAlert body={"Success"}/>;
+  function renderAlert() {
+    if (successChanged) {
+      if (success) {
+        loadPageDelayed("user_list", 1000);
+        return <SuccessAlert body="Login effettuato con successo" />;
       }
-      return <ErrorAlert body="Credenziali errate."/>
+      return <ErrorAlert body="Credenziali errate." />;
     }
   }
-  
-  async function handleSubmit(formData: FormData){
-    const result : boolean | undefined = await checkLogin(formData);
-    if(result != null && result != undefined && typeof result === 'boolean'){
-        setSuccess(result);
-        setSuccessChanged(true);
+
+  async function handleSubmit(formData: FormData) {
+    const result: boolean | undefined = await checkLogin(formData);
+    if (result != null && result != undefined && typeof result === "boolean") {
+      setSuccess(result);
+      setSuccessChanged(true);
     }
   }
-  
+
   return (
     <>
-    {renderAlert()}
+      {renderAlert()}
       <div className="d-flex justify-content-center pt-5">
-        <form action={fd=> handleSubmit(fd)} className=" w-50 shadow-lg rounded-5 py-4">
+        <form
+          action={(fd) => handleSubmit(fd)}
+          className=" w-50 shadow-lg rounded-5 py-4"
+        >
           <h1 className="text-center py-4"> Log in </h1>
           <div className="d-flex justify-content-center ">
             <div className="form-group m-0 pb-3">

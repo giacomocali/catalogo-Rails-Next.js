@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import "../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import "../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
 
@@ -8,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Progetto web di prova",
-  description: "Progetto implementato con Ruby On Rails, ",
+  description: "Progetto implementato con Ruby On Rails, Next.js, Postgresql e Bootstrap Italia. ",
 };
 
 export default function RootLayout({
