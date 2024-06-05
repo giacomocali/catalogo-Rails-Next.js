@@ -1,6 +1,7 @@
+// FUNZIONI PER CHIAMARE L'API DI RAILS
 "use server";
+
 import axios, { AxiosResponse } from "axios";
-// import { renderAlert } from "./LoginForm";
 
 interface selectedUser {
   data: {
@@ -14,10 +15,6 @@ interface selectedUser {
     updated_at: string;
   };
 }
-
-// interface users{
-//   []
-// }
 
 export async function checkLogin(formData: FormData) {
   const providedUsername = formData.get("username")?.valueOf();
@@ -37,15 +34,26 @@ export async function checkLogin(formData: FormData) {
   }
 }
 
-export async function fetchUsers() {
+export async function getUsers() {
   try {
-    const usersList: AxiosResponse<any> = await axios.get(
-      "http://localhost:3000/api/v1/utenti"
-    );
-    const conv: any[] = usersList.data;
-    return conv;
-  } 
-  catch (error) {
-    return error;
+    const users = await axios.get("http://localhost:3000/api/v1/utenti");
+    const data = users.data;
+    return data;
+  } catch (error) {
+    console.error("Errore cercando di ottenere gli utenti:"+error);
+    return [];
+  }
+}
+
+export async function getProducts(){
+  try{
+    const products = await axios.get("http://localhost:3000/api/v1/prodotto/");
+    const data = products.data;
+    return data;
+  }
+  catch(error)
+  {
+    console.error('Errore cercando di ottenere i prodotti:'+error)
+    return [];
   }
 }

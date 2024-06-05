@@ -13,8 +13,8 @@ export function Header(){
                 </a>
                 <div className="link-list-wrapper collapse" id="menu1b">
                   <ul className="link-list">
-                    <li><a className="list-item active" href="#"> Utenti </a></li>
-                    <li><a className="list-item" href="#" aria-current="page"> Prodotti </a></li>
+                    <li><a className="list-item" href="/usersview"> Utenti </a></li>
+                    <li><a className="list-item active" href="#" aria-current="page"> Prodotti </a></li>
                   </ul>
                 </div>
               </nav>
