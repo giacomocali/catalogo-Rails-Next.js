@@ -1,28 +1,29 @@
 // VISUALE DEI PRODOTTI
-"use client"
-import { useState, useEffect } from "react";
-import { Header } from "../../components/ProductsHeader";
-import { ProductRow } from "@/components/ProductRow";
+"use client";
+import { useState, useEffect, Suspense } from "react";
+import { Header } from "../../components/ProductComponents";
+import { ProductRow } from "@/components/ProductComponents";
 import { getProducts } from "../../ApiActions";
+import { UserModal } from "@/components/Modals";
 
 import "../../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
 
-export default function ProductsView () {
+export default function ProductsView() {
   const [products, setProducts] = useState([]);
-  
-  useEffect(()=>{
-    const loadProducts = async ()=>{
+
+  useEffect(() => {
+    const loadProducts = async () => {
       const fetchedProducts = await getProducts();
       setProducts(fetchedProducts);
     };
     loadProducts();
-  },[])
+  }, []);
 
   return (
     <>
       <Header />
-      <h1 className="my-5 text-center"> Lista utenti </h1>
+      <h1 className="my-5 text-center"> Lista prodotti </h1>
       <table className="table table-striped table-bordered table-hover rounded-lg shadow">
         <thead>
           <tr>
@@ -35,11 +36,12 @@ export default function ProductsView () {
           </tr>
         </thead>
         <tbody>
-          {products.map(product =>(
-            <ProductRow product={product}/>
-          ))}
+            {products.map((product) => (
+              <ProductRow product={product} />
+            ))}
         </tbody>
       </table>
+      
     </>
   );
 }

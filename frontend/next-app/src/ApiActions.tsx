@@ -16,6 +16,16 @@ interface selectedUser {
   };
 }
 
+interface createdUser{
+  data:{
+    username: string;
+    password: string;
+    nome: string;
+    cognome: string;
+    data_nascita: string;
+  }
+}
+
 export async function checkLogin(formData: FormData) {
   const providedUsername = formData.get("username")?.valueOf();
   const providedPassword = formData.get("password")?.valueOf();
@@ -55,5 +65,20 @@ export async function getProducts(){
   {
     console.error('Errore cercando di ottenere i prodotti:'+error)
     return [];
+  }
+}
+
+export async function createUser(body){
+  try{
+    const response = await axios.post("http://localhost:3000/api/v1/utenti/", body, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    return true;
+  }
+  catch(err){
+    console.error(err);
+    return false;
   }
 }
