@@ -82,3 +82,12 @@ export async function createUser(body){
     return false;
   }
 }
+
+export async function removeUser(id){
+  try{
+    const response = await axios.delete(`http://localhost:3000/api/v1/utenti/${id}`)
+  }
+  catch(err){
+    console.error(err);
+  }
+}

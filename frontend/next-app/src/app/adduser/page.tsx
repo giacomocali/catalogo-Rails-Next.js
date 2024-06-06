@@ -4,23 +4,22 @@ import { createUser } from "@/ApiActions";
 import { loadPageDelayed } from "@/loadPageDelayed";
 import { redirect } from "next/navigation";
 
-async function sendCreateUser(data: FormData){
-  "use server"
+async function sendCreateUser(data: FormData) {
+  "use server";
   const userToSend = {
-    nome: data.get('nome'),
-    cognome: data.get('cognome'),
-    username: data.get('username'),
-    password: data.get('password'),
-    data_nascita: data.get('data_nascita')
-  }
-  
+    nome: data.get("nome"),
+    cognome: data.get("cognome"),
+    username: data.get("username"),
+    password: data.get("password"),
+    data_nascita: data.get("data_nascita"),
+  };
+
   const success: boolean = await createUser(userToSend);
-  if(success){
-    redirect("usersview")
+  if (success) {
+    redirect("usersview");
     console.log("UTENTE CREATO CON SUCCESSO");
-  }
-  else{
-    console.error("CREAZIONE UTENTE FALLITA")
+  } else {
+    console.error("CREAZIONE UTENTE FALLITA");
   }
   // implementare alert di bootstrap per dare migliore feedback dell'esito all'utente
 }
@@ -29,15 +28,34 @@ export default function Home() {
   return (
     <>
       <Header />
-      <h2 className="text-center my-5"> Inserisci i dati del nuovo utente: </h2>
       <div className="d-flex justify-content-center mt-5">
         <form action={sendCreateUser} className="mw-50 shadow p-4 rounded-4">
+          <h5 className="text-center my-4">
+            {" "}
+            Inserisci i dati del nuovo utente:{" "}
+          </h5>
           <div className="form-group">
-            <AddUserInput type={"text"} identifier={"username"} label={"Username"} />
-            <AddUserInput type={"password"} identifier={"password"} label={"Password"} />
+            <AddUserInput
+              type={"text"}
+              identifier={"username"}
+              label={"Username"}
+            />
+            <AddUserInput
+              type={"password"}
+              identifier={"password"}
+              label={"Password"}
+            />
             <AddUserInput type={"text"} identifier={"nome"} label={"Nome"} />
-            <AddUserInput type={"text"} identifier={"cognome"} label={"Cognome"} />
-            <AddUserInput type={"date"} identifier={"data_nascita"} label={"Data di nascita"} />
+            <AddUserInput
+              type={"text"}
+              identifier={"cognome"}
+              label={"Cognome"}
+            />
+            <AddUserInput
+              type={"date"}
+              identifier={"data_nascita"}
+              label={"Data di nascita"}
+            />
           </div>
           <button type="submit" className="btn btn-primary mx-2 rounded-3">
             Invia
@@ -54,7 +72,6 @@ export default function Home() {
     </>
   );
 }
-
 
 export function AddUserInput({ type, identifier, label }) {
   return (

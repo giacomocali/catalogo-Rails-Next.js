@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import { Header } from "../../components/ProductComponents";
 import { ProductRow } from "@/components/ProductComponents";
 import { getProducts } from "../../ApiActions";
-import { UserModal } from "@/components/Modals";
+import { YesNoModal } from "@/components/Modals";
 
 import "../../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
@@ -24,6 +24,7 @@ export default function ProductsView() {
     <>
       <Header />
       <h1 className="my-5 text-center"> Lista prodotti </h1>
+      <button onClick={()=>location.reload()} className="btn btn-secondary p-2 m-2"> Aggiorna ⟳ </button>
       <table className="table table-striped table-bordered table-hover rounded-lg shadow">
         <thead>
           <tr>
