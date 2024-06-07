@@ -4,16 +4,18 @@ import { useState, useEffect } from "react";
 import { Header } from "../../components/UserComponents";
 import { UserRow } from "../../components/UserComponents";
 import { getUsers, removeUser } from "../../ApiActions";
+import { editUserForm } from "../../components/UserComponents";
 
 import { loadPageDelayed } from "@/loadPageDelayed";
 
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import "../../../node_modules/bootstrap/dist/js/bootstrap.min.js"
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import "../../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
 
 export default function UsersView() {
   const [users, setUsers] = useState([]);
+  const [showEditUser, setShowEditUser] = useState(false);
   useEffect(() => {
     const loadUsers = async () => {
       const fetchedUsers = await getUsers();
@@ -21,6 +23,15 @@ export default function UsersView() {
     };
     loadUsers();
   }, []);
+
+  function changeShowEditUser(val:boolean){
+    setShowEditUser(val);
+  }
+
+
+  useEffect(() => {
+    console.log("showEditUser value changed: " + showEditUser);
+  }, [showEditUser]);
 
   return (
     <>
@@ -39,26 +50,31 @@ export default function UsersView() {
         Aggiungi utente +
       </button>
 
+      {showEditUser && editUserForm()}
+
       <table className="table table-striped table-bordered table-hover shadow">
         <thead className="shadow-sm">
           <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Cognome</th>
-            <th scope="col">Username</th>
-            <th scope="col">Password</th>
-            <th scope="col">Data nascita</th>
-            <th scope="col">Aggiornato</th>
-            <th scope="col">Creato</th>
+            <th scope="col" key={"id"}>ID</th>
+            <th scope="col" key={"nome"}>Nome</th>
+            <th scope="col" key={"cognome"}>Cognome</th>
+            <th scope="col" key={"username"}>Username</th>
+            <th scope="col" key={"password"}>Password</th>
+            <th scope="col" key={"data_nascita"}>Data nascita</th>
+            <th scope="col" key={"aggiornato"}>Aggiornato</th>
+            <th scope="col" key={"creato"}>Creato</th>
           </tr>
         </thead>
         <tbody>
           {users.map((user) => (
-            <UserRow user={user} removeUser={removeUser}/>
+            <UserRow
+              user={user}
+              removeUser={removeUser}
+              f={changeShowEditUser}
+            />
           ))}
         </tbody>
       </table>
-
     </>
   );
 }

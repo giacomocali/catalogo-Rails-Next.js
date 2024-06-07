@@ -1,8 +1,4 @@
 import { updateUser } from "@/ApiActions";
-import Home from "@/app/updateuser/page";
-import { redirect } from "next/navigation";
-import { loadPageDelayed } from "@/loadPageDelayed";
-import { setUser } from "@/app/updateuser/page";
 
 interface userData {
   username: string;
@@ -16,9 +12,22 @@ interface userData {
 //   redirect("/updateuser");
 // }
 
-export function UserRow({ user, removeUser }) {
+var currentUser = {
+  id:"",
+  username: "",
+  password: "",
+  nome: "",
+  cognome: "",
+  data_nascita: "",
+};
+
+function editUser(user) {
+  currentUser = user;
+}
+
+export function UserRow({ user, removeUser, f }) {
   return (
-    <tr>
+    <tr key={user.id}>
       <th scope="row">{user.id}</th>
       <td>{user.nome}</td>
       <td>{user.cognome}</td>
@@ -27,11 +36,15 @@ export function UserRow({ user, removeUser }) {
       <td> {user.data_nascita} </td>
       <td> {user.updated_at}</td>
       <td> {user.created_at} </td>
+
       <td className="d-flex justify-content-center">
         <button
           type="button"
           className="btn btn-primary mx-1 rounded-3"
-          onClick={() => {redirect("/updateuser")}}
+          onClick={() => {
+            editUser(user);
+            f(true);
+          }}
         >
           Modifica
         </button>
@@ -48,7 +61,7 @@ export function UserRow({ user, removeUser }) {
         <div className="dropdown-menu">
           <div className="link-list-wrapper">
             <ul className="link-list">
-              <li key={crypto.randomUUID()}>
+              <li key={user.id}>
                 <button
                   className="dropdown-item list-item"
                   onClick={() => removeUser(user.id)}
@@ -110,5 +123,82 @@ export function Header() {
         </div>
       </div>
     </div>
+  );
+}
+
+export function UpdateUserInput({ type, identifier, label, value }) {
+  return (
+    <div className="mb-4">
+      <p className="m-0 p-0"> {label} </p>
+      <input
+        type={type}
+        id={identifier}
+        name={identifier}
+        placeholder={value}
+        className="form-control shadow-sm rounded-3"
+      />
+    </div>
+  );
+}
+
+export function editUserForm() {
+  // "use client"
+  // useEffect(() => {
+  //   const ref = document.querySelector("#editUser");
+  //   if (ref != null) {
+  //     ref.scrollIntoView();
+  //   }
+  // }, []);
+
+  return (
+    <>
+      <div className="d-flex justify-content-center mt-5" id="editUser">
+        <form action={(fd:FormData)=>updateUser(fd, currentUser)} className="mw-50 shadow p-4 rounded-4">
+          <h5 className="text-center my-4">Aggiorna i dati dell'utente:</h5>
+          <div className="form-group">
+            <UpdateUserInput
+              type={"text"}
+              identifier={"username"}
+              label={"Username"}
+              value={currentUser.username}
+            />
+            <UpdateUserInput
+              type={"password"}
+              identifier={"password"}
+              label={"Password"}
+              value={currentUser.password}
+            />
+            <UpdateUserInput
+              type={"text"}
+              identifier={"nome"}
+              label={"Nome"}
+              value={currentUser.nome}
+            />
+            <UpdateUserInput
+              type={"text"}
+              identifier={"cognome"}
+              label={"Cognome"}
+              value={currentUser.cognome}
+            />
+            <UpdateUserInput
+              type={"date"}
+              identifier={"data_nascita"}
+              label={"Data di nascita"}
+              value={currentUser.data_nascita}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary mx-2 rounded-3">
+            Invia
+          </button>
+          <a
+            type="button"
+            className="btn btn-secondary mx-2 rounded-3"
+            href="/usersview"
+          >
+            Indietro
+          </a>
+        </form>
+      </div>
+    </>
   );
 }

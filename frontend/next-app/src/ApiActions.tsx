@@ -101,17 +101,23 @@ export async function removeUser(id) {
   }
 }
 
-export async function updateUser(body) {
+export async function updateUser(formData: FormData, usr) {
+  console.log(usr)
+  const body = {}
+  formData.forEach((value, key)=>{
+    body[key] = value;
+  });
+
   try {
     const response = await axios.put(
-      "http://localhost:3000/api/v1/utenti/",
-      body,
+      `http://localhost:3000/api/v1/utenti/${usr.id}`,body,
       {
         headers: {
           "Content-Type": "application/json",
         },
       }
     );
+    console.log(response);
     return true;
   } catch (err) {
     console.error(err);
