@@ -26,7 +26,7 @@ export default function ProductsView() {
       <h1 className="my-5 text-center"> Lista prodotti </h1>
       <button onClick={()=>location.reload()} className="btn btn-secondary p-2 m-2"> Aggiorna ⟳ </button>
       <table className="table table-striped table-bordered table-hover rounded-lg shadow">
-        <thead>
+        <thead className="shadow-sm">
           <tr>
             <th scope="col">ID</th>
             <th scope="col">ID tipo prodotto</th>

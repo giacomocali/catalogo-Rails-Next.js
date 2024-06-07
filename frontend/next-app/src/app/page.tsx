@@ -13,6 +13,7 @@ export default function Home() {
   function renderAlert() {
     if (successChanged) {
       if (success) {
+        console.log("LOGIN SUCCESS")
         loadPageDelayed("usersview", 1000);
         return <SuccessAlert body="Login effettuato con successo" />;
       }

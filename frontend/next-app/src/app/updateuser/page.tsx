@@ -1,26 +1,26 @@
-// INTERFACCIA DI AGGIUNTA UTENTI
+// INTERFACCIA DI AGGIORNAMENTO UTENTI
+"use client";
 import { Header } from "@/components/UserComponents";
-import { createUser } from "@/ApiActions";
-import { loadPageDelayed } from "@/loadPageDelayed";
-import { redirect } from "next/navigation";
+import { sendUpdateUser } from "./sendUpdateUser";
+import { useState } from "react";
 
-async function sendCreateUser(data: FormData) {
-  "use server";
-  const userToSend = {
-    nome: data.get("nome"),
-    cognome: data.get("cognome"),
-    username: data.get("username"),
-    password: data.get("password"),
-    data_nascita: data.get("data_nascita"),
-  };
+interface userData {
+  username: string;
+  password: string;
+  nome: string;
+  cognome: string;
+  data_nascita: string;
+}
 
-  const success: boolean = await createUser(userToSend);
-  if (success) {
-    redirect("usersview");
-  } else {
-    console.error("CREAZIONE UTENTE FALLITA");
-  }
-  // implementare alert di bootstrap per dare migliore feedback dell'esito all'utente
+export var user: userData ={
+    username: "",
+    password: "",
+    nome: "",
+    cognome: "",
+    data_nascita: ""
+}
+export function setUser(data: userData) {
+  user = data;
 }
 
 export default function Home() {
@@ -28,32 +28,38 @@ export default function Home() {
     <>
       <Header />
       <div className="d-flex justify-content-center mt-5">
-        <form action={sendCreateUser} className="mw-50 shadow p-4 rounded-4">
-          <h5 className="text-center my-4">
-            {" "}
-            Inserisci i dati del nuovo utente:{" "}
-          </h5>
+        <form action={sendUpdateUser} className="mw-50 shadow p-4 rounded-4">
+          <h5 className="text-center my-4">Aggiorna i dati dell'utente:</h5>
           <div className="form-group">
-            <AddUserInput
+            <UpdateUserInput
               type={"text"}
               identifier={"username"}
               label={"Username"}
+              value={user.username}
             />
-            <AddUserInput
+            <UpdateUserInput
               type={"password"}
               identifier={"password"}
               label={"Password"}
+              value={user.password}
             />
-            <AddUserInput type={"text"} identifier={"nome"} label={"Nome"} />
-            <AddUserInput
+            <UpdateUserInput
+              type={"text"}
+              identifier={"nome"}
+              label={"Nome"}
+              value={user.nome}
+            />
+            <UpdateUserInput
               type={"text"}
               identifier={"cognome"}
               label={"Cognome"}
+              value={user.cognome}
             />
-            <AddUserInput
+            <UpdateUserInput
               type={"date"}
               identifier={"data_nascita"}
               label={"Data di nascita"}
+              value={user.data_nascita}
             />
           </div>
           <button type="submit" className="btn btn-primary mx-2 rounded-3">
@@ -72,7 +78,7 @@ export default function Home() {
   );
 }
 
-export function AddUserInput({ type, identifier, label }) {
+export function UpdateUserInput({ type, identifier, label, value }) {
   return (
     <div className="mb-4">
       <p className="m-0 p-0"> {label} </p>
@@ -80,7 +86,7 @@ export function AddUserInput({ type, identifier, label }) {
         type={type}
         id={identifier}
         name={identifier}
-        placeholder={label}
+        value={value}
         className="form-control shadow-sm rounded-3"
       />
     </div>

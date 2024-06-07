@@ -1,16 +1,17 @@
+require 'cgi'
 class Api::V1::UtentiController < ApplicationController
   
-  def show_by_username
-    logger.warn "It works!"
-    utente = Utenti.find_by(username: params[:username])
-    if utente
-      render json: utente, status: 200
-    else
-      render json:{
-        error:"show_by_username: Utente non trovato."
-      }  
-    end
-  end
+  # def show_by_username
+  #   puts "RUNNING SHOW BY USERNAME"
+  #   utente = Utenti.find_by(username: params[:username])
+  #   if utente
+  #     render json: utente, status: 200
+  #   else
+  #     render json:{
+  #       error:"show_by_username: Utente non trovato.", status: 404
+  #     }  
+  #   end
+  # end
   
   def index
     utenti = Utenti.all
@@ -18,7 +19,9 @@ class Api::V1::UtentiController < ApplicationController
   end
 
   def show
-    utenti = Utenti.find_by(id: params[:id])
+    usernameFornito = params[:username];
+    puts usernameFornito;
+    utenti = Utenti.find_by(username: usernameFornito)
     if utenti
       render json: utenti, status: 200
     else
