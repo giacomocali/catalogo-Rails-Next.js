@@ -73,20 +73,11 @@ export async function removeUser(id) {
   }
 }
 
-export async function updateUser(formData: FormData, usr) {
-  console.log(usr);
-  const body = {};
-  formData.forEach((value, key) => {
-    if (businessLogicChecks(value)) {
-      console.log("impossibile aggiornare l'utente con parametri vuoti");
-      return;
-    }
-    body[key] = value;
-  });
-
+export async function updateUser(body, id) {
+  
   try {
     const response = await axios.put(
-      `http://localhost:3000/api/v1/utenti/${usr.id}`,
+      `http://localhost:3000/api/v1/utenti/${id}`,
       body,
       {
         headers: {
@@ -132,8 +123,6 @@ export async function getProducts() {
 
 
 export async function createProduct(body) {
-  
-
   try {
     const response = axios.post(`http://localhost:3000/api/v1/prodotto`, body, {
       headers: { "Content-Type": "application/json" },
@@ -141,6 +130,21 @@ export async function createProduct(body) {
     return true;
   } catch (err) {
     return false;
+  }
+}
+
+export async function updateProduct(body, id){
+  try{
+    const response = axios.put(`http://localhost:3000/api/v1/prodotto/${id}`, body,
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return true;
+  }
+  catch(error){
+    console.error(error);
   }
 }
 

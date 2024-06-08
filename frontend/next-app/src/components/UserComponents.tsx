@@ -1,4 +1,4 @@
-import { updateUser } from "@/ApiActions";
+import { sendUpdateUser } from "@/app/usersview/sendUpdateUser";
 
 interface userData {
   username: string;
@@ -13,7 +13,7 @@ interface userData {
 // }
 
 var currentUser = {
-  id:"",
+  id: "",
   username: "",
   password: "",
   nome: "",
@@ -126,22 +126,9 @@ export function Header() {
   );
 }
 
-export function UpdateUserInput({ type, identifier, label, value }) {
-  return (
-    <div className="mb-4">
-      <p className="m-0 p-0"> {label} </p>
-      <input
-        type={type}
-        id={identifier}
-        name={identifier}
-        placeholder={value}
-        className="form-control shadow-sm rounded-3"
-      />
-    </div>
-  );
-}
 
-export function editUserForm() {
+
+export function editUserForm(setShowEditUser) {
   // "use client"
   // useEffect(() => {
   //   const ref = document.querySelector("#editUser");
@@ -153,7 +140,10 @@ export function editUserForm() {
   return (
     <>
       <div className="d-flex justify-content-center mt-5" id="editUser">
-        <form action={(fd:FormData)=>updateUser(fd, currentUser)} className="mw-50 shadow p-4 rounded-4">
+        <form
+          action={(fd:FormData)=>sendUpdateUser(fd, currentUser.id)}
+          className="mw-50 shadow p-4 rounded-4"
+        >
           <h5 className="text-center my-4">Aggiorna i dati dell'utente:</h5>
           <div className="form-group">
             <UpdateUserInput
@@ -190,15 +180,30 @@ export function editUserForm() {
           <button type="submit" className="btn btn-primary mx-2 rounded-3">
             Invia
           </button>
-          <a
+          <button
             type="button"
             className="btn btn-secondary mx-2 rounded-3"
-            href="/usersview"
+            onClick={() => setShowEditUser(false)}
           >
             Indietro
-          </a>
+          </button>
         </form>
       </div>
     </>
+  );
+}
+
+export function UpdateUserInput({ type, identifier, label, value }) {
+  return (
+    <div className="mb-4">
+      <p className="m-0 p-0"> {label} </p>
+      <input
+        type={type}
+        id={identifier}
+        name={identifier}
+        placeholder={value}
+        className="form-control shadow-sm rounded-3"
+      />
+    </div>
   );
 }

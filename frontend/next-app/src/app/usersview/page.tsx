@@ -51,7 +51,7 @@ export default function UsersView() {
         Aggiungi utente +
       </button>
 
-      {showEditUser && editUserForm()}
+      {showEditUser && editUserForm(changeShowEditUser)}
 
       <table className="table table-striped table-bordered table-hover shadow">
         <thead className="shadow-sm">
