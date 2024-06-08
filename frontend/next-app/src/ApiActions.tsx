@@ -31,7 +31,8 @@ export async function checkLogin(formData: FormData) {
   var providedUsername: string =
     formData.get("username")?.valueOf().toString() ?? " ";
 
-  const providedPassword: string = formData.get("password")?.valueOf().toString() ?? " ";
+  const providedPassword: string =
+    formData.get("password")?.valueOf().toString() ?? " ";
 
   // providedUsername = encodeURIComponent(providedUsername);
 
@@ -59,6 +60,44 @@ export async function getUsers() {
   } catch (error) {
     console.error("Errore cercando di ottenere gli utenti:" + error);
     return [];
+  }
+}
+
+export async function removeUser(id) {
+  try {
+    const response = await axios.delete(
+      `http://localhost:3000/api/v1/utenti/${id}`
+    );
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function updateUser(formData: FormData, usr) {
+  console.log(usr);
+  const body = {};
+  formData.forEach((value, key) => {
+    if (businessLogicChecks(value)) {
+      console.log("impossibile aggiornare l'utente con parametri vuoti");
+      return;
+    }
+    body[key] = value;
+  });
+
+  try {
+    const response = await axios.put(
+      `http://localhost:3000/api/v1/utenti/${usr.id}`,
+      body,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
   }
 }
 
@@ -91,36 +130,22 @@ export async function createUser(body) {
   }
 }
 
-export async function removeUser(id) {
+export async function createProduct(body) {
+  
+
   try {
-    const response = await axios.delete(
-      `http://localhost:3000/api/v1/utenti/${id}`
-    );
+    const response = axios.post(`http://localhost:3000/api/v1/prodotto`, body, {
+      headers: { "Content-Type": "application/json" },
+    });
+    return true;
   } catch (err) {
-    console.error(err);
+    return false;
   }
 }
 
-export async function updateUser(formData: FormData, usr) {
-  console.log(usr)
-  const body = {}
-  formData.forEach((value, key)=>{
-    body[key] = value;
-  });
-
-  try {
-    const response = await axios.put(
-      `http://localhost:3000/api/v1/utenti/${usr.id}`,body,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    console.log(response);
-    return true;
-  } catch (err) {
-    console.error(err);
+function businessLogicChecks(k: any): boolean {
+  if (k === "" || k === " " || k === null || k === undefined) {
     return false;
   }
+  return true;
 }

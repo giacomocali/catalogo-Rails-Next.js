@@ -8,6 +8,8 @@ import { YesNoModal } from "@/components/Modals";
 
 import "../../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
+import { redirect } from "next/navigation";
+import { loadPageDelayed } from "@/loadPageDelayed";
 
 export default function ProductsView() {
   const [products, setProducts] = useState([]);
@@ -24,7 +26,21 @@ export default function ProductsView() {
     <>
       <Header />
       <h1 className="my-5 text-center"> Lista prodotti </h1>
-      <button onClick={()=>location.reload()} className="btn btn-secondary p-2 m-2"> Aggiorna ⟳ </button>
+
+      <button
+        onClick={() => location.reload()}
+        className="btn btn-secondary p-2 m-2 rounded-3"
+      >
+        Aggiorna ⟳{" "}
+      </button>
+
+      <button
+        className="btn btn-success p-2 m-2 rounded-3"
+        onClick={() => loadPageDelayed("/addproduct",500)}
+      >
+        Aggiungi utente +
+      </button>
+
       <table className="table table-striped table-bordered table-hover rounded-lg shadow">
         <thead className="shadow-sm">
           <tr>
@@ -37,12 +53,11 @@ export default function ProductsView() {
           </tr>
         </thead>
         <tbody>
-            {products.map((product) => (
-              <ProductRow product={product} />
-            ))}
+          {products.map((product) => (
+            <ProductRow product={product} />
+          ))}
         </tbody>
       </table>
-      
     </>
   );
 }
