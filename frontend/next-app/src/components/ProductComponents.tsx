@@ -1,4 +1,4 @@
-export function ProductRow({ product }) {
+export function ProductRow({ product, removeProduct }) {
   return (
     <tr>
       <th scope="row">{product.id}</th>
@@ -7,13 +7,31 @@ export function ProductRow({ product }) {
       <td>{product.descrizione}</td>
       <td>{product.created_at}</td>
       <td>{product.updated_at}</td>
-      <td>
-        <button type="button" className="btn btn-primary p-2 m-1">
+      <td className="d-flex">
+        <button type="button" className="btn btn-primary mx-1 rounded-3">
           Modifica
         </button>
-        <button type="button" className="btn btn-danger p-2 m-1">
+
+        <button
+          type="button"
+          className="btn btn-danger dropdown-toggle mx-1 rounded-3"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           Rimuovi
         </button>
+        <div className="dropdown-menu">
+          <div className="link-list-wrapper">
+            <ul className="link-list">
+              <li key={product.id}>
+                <button className="dropdown-item list-item" onClick={()=> removeProduct(product.id)}>
+                  <span>Conferma</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </td>
     </tr>
   );

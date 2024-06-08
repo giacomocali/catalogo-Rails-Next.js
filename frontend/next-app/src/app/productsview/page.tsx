@@ -3,13 +3,15 @@
 import { useState, useEffect, Suspense } from "react";
 import { Header } from "../../components/ProductComponents";
 import { ProductRow } from "@/components/ProductComponents";
-import { getProducts } from "../../ApiActions";
-import { YesNoModal } from "@/components/Modals";
+import { getProducts, removeProduct } from "../../ApiActions";
 
-import "../../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
-import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
 import { redirect } from "next/navigation";
 import { loadPageDelayed } from "@/loadPageDelayed";
+
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../../node_modules/bootstrap/dist/js/bootstrap.min.js";
+import "../../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
+import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
 
 export default function ProductsView() {
   const [products, setProducts] = useState([]);
@@ -54,7 +56,7 @@ export default function ProductsView() {
         </thead>
         <tbody>
           {products.map((product) => (
-            <ProductRow product={product} />
+            <ProductRow product={product} removeProduct={removeProduct}/>
           ))}
         </tbody>
       </table>

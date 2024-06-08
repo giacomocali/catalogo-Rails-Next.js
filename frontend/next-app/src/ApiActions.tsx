@@ -101,17 +101,6 @@ export async function updateUser(formData: FormData, usr) {
   }
 }
 
-export async function getProducts() {
-  try {
-    const products = await axios.get("http://localhost:3000/api/v1/prodotto/");
-    const data = products.data;
-    return data;
-  } catch (error) {
-    console.error("Errore cercando di ottenere i prodotti:" + error);
-    return [];
-  }
-}
-
 export async function createUser(body) {
   try {
     const response = await axios.post(
@@ -130,6 +119,18 @@ export async function createUser(body) {
   }
 }
 
+export async function getProducts() {
+  try {
+    const products = await axios.get("http://localhost:3000/api/v1/prodotto/");
+    const data = products.data;
+    return data;
+  } catch (error) {
+    console.error("Errore cercando di ottenere i prodotti:" + error);
+    return [];
+  }
+}
+
+
 export async function createProduct(body) {
   
 
@@ -140,6 +141,15 @@ export async function createProduct(body) {
     return true;
   } catch (err) {
     return false;
+  }
+}
+
+export async function removeProduct(id){
+  try{
+    const response = axios.delete(`http://localhost:3000/api/v1/prodotto/${id}`)
+  }
+  catch(error){
+    console.error(error);
   }
 }
 
