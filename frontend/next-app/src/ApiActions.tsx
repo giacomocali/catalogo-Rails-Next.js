@@ -73,25 +73,6 @@ export async function removeUser(id) {
   }
 }
 
-export async function updateUser(body, id) {
-  
-  try {
-    const response = await axios.put(
-      `http://localhost:3000/api/v1/utenti/${id}`,
-      body,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    return true;
-  } catch (err) {
-    console.error(err);
-    return false;
-  }
-}
-
 export async function createUser(body) {
   try {
     const response = await axios.post(
@@ -121,7 +102,6 @@ export async function getProducts() {
   }
 }
 
-
 export async function createProduct(body) {
   try {
     const response = axios.post(`http://localhost:3000/api/v1/prodotto`, body, {
@@ -133,26 +113,50 @@ export async function createProduct(body) {
   }
 }
 
-export async function updateProduct(body, id){
-  try{
-    const response = axios.put(`http://localhost:3000/api/v1/prodotto/${id}`, body,
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+export async function updateUser(body, id) {
+  try {
+    const response = await axios.put(
+      `http://localhost:3000/api/v1/utenti/${id}`,
+      body,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     return true;
-  }
-  catch(error){
-    console.error(error);
+  } catch (err) {
+    console.error(err);
+    return false;
   }
 }
 
-export async function removeProduct(id){
-  try{
-    const response = axios.delete(`http://localhost:3000/api/v1/prodotto/${id}`)
+export async function updateProduct(body, id) {
+  try {
+    console.log(body);
+    console.log(id);
+    const response = axios.put(
+      `http://localhost:3000/api/v1/prodotto/${id}`,
+      body,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return true;
+  } catch (error) {
+    console.error(error);
+    return false;
   }
-  catch(error){
+}
+
+export async function removeProduct(id) {
+  try {
+    const response = axios.delete(
+      `http://localhost:3000/api/v1/prodotto/${id}`
+    );
+  } catch (error) {
     console.error(error);
   }
 }

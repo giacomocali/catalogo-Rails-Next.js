@@ -7,6 +7,7 @@ import { getProducts, removeProduct } from "../../ApiActions";
 
 import { redirect } from "next/navigation";
 import { loadPageDelayed } from "@/loadPageDelayed";
+import { editProductForm } from "../../components/ProductComponents";
 
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../../node_modules/bootstrap/dist/js/bootstrap.min.js";
@@ -15,7 +16,7 @@ import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
 
 export default function ProductsView() {
   const [products, setProducts] = useState([]);
-
+  const [showEditProduct, setShowEditProduct] = useState(false);
   useEffect(() => {
     const loadProducts = async () => {
       const fetchedProducts = await getProducts();
@@ -23,6 +24,11 @@ export default function ProductsView() {
     };
     loadProducts();
   }, []);
+
+
+  function changeShowEditProduct(value:boolean){
+    setShowEditProduct(value);
+  }
 
   return (
     <>
@@ -33,7 +39,7 @@ export default function ProductsView() {
         onClick={() => location.reload()}
         className="btn btn-secondary p-2 m-2 rounded-3"
       >
-        Aggiorna ⟳{" "}
+        Aggiorna ⟳
       </button>
 
       <button
@@ -42,6 +48,8 @@ export default function ProductsView() {
       >
         Aggiungi utente +
       </button>
+
+      {showEditProduct && editProductForm(changeShowEditProduct)}
 
       <table className="table table-striped table-bordered table-hover rounded-lg shadow">
         <thead className="shadow-sm">
@@ -56,7 +64,7 @@ export default function ProductsView() {
         </thead>
         <tbody>
           {products.map((product) => (
-            <ProductRow product={product} removeProduct={removeProduct}/>
+            <ProductRow product={product} removeProduct={removeProduct} showEditDialog={changeShowEditProduct}/>
           ))}
         </tbody>
       </table>

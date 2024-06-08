@@ -14,10 +14,10 @@ export async function sendUpdateUser(data: FormData, id) {
     const success = await updateUser(updatedUser, id);
     console.log(success)
     if (success) {
-      console.log("AGGIORNAMENTO UTENTE FATTO CON SUCCESSO")
-      redirect("/usersview");
+      console.log("AGGIORNATO UTENTE CON SUCCESSO")
+      redirect("/usersview")
     }
     else{
-      console.error("AGGIORNAMENTO UTENTE FALLITO");
+      console.error("AGGIORNAMENTO UTENTE FALLITO")
     }
   }

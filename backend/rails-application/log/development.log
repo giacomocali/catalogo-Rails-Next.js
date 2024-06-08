@@ -14565,3 +14565,764 @@ Processing by Api::V1::UtentiController#index as HTML
 Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.8ms | Allocations: 972)
 
 
+Started PUT "/api/v1/utenti/4" for 127.0.0.1 at 2024-06-08 21:22:23 +0200
+Processing by Api::V1::UtentiController#update as HTML
+  Parameters: {"nome"=>"Ivan", "cognome"=>"Vespa", "username"=>"ivanvespa@gmail.com", "password"=>"[FILTERED]", "data_nascita"=>"2002-05-09", "id"=>"4", "utenti"=>{"username"=>"ivanvespa@gmail.com", "password"=>"[FILTERED]", "nome"=>"Ivan", "cognome"=>"Vespa", "data_nascita"=>"2002-05-09"}}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:52:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+  [1m[36mUtenti Update (1.7ms)[0m  [1m[33mUPDATE "utentis" SET "nome" = $1, "data_nascita" = $2, "updated_at" = $3 WHERE "utentis"."id" = $4[0m  [["nome", "Ivan"], ["data_nascita", "2002-05-09"], ["updated_at", "2024-06-08 19:22:23.436337"], ["id", 4]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 3.0ms | Allocations: 2394)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:22:51 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 972)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:22:51 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 972)
+
+
+Started PUT "/api/v1/utenti/6" for 127.0.0.1 at 2024-06-08 21:24:19 +0200
+Processing by Api::V1::UtentiController#update as HTML
+  Parameters: {"nome"=>"Alessio", "cognome"=>"Verdi", "username"=>"alessioverdi@gmail.com", "password"=>"[FILTERED]", "data_nascita"=>"2007-11-02", "id"=>"6", "utenti"=>{"username"=>"alessioverdi@gmail.com", "password"=>"[FILTERED]", "nome"=>"Alessio", "cognome"=>"Verdi", "data_nascita"=>"2007-11-02"}}
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:52:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+  [1m[36mUtenti Update (2.6ms)[0m  [1m[33mUPDATE "utentis" SET "username" = $1, "password" = $2, "nome" = $3, "cognome" = $4, "data_nascita" = $5, "updated_at" = $6 WHERE "utentis"."id" = $7[0m  [["username", "alessioverdi@gmail.com"], ["password", "[FILTERED]"], ["nome", "Alessio"], ["cognome", "Verdi"], ["data_nascita", "2007-11-02"], ["updated_at", "2024-06-08 19:24:19.543870"], ["id", 6]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 2398)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:24:22 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.8ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 990)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:24:22 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 990)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:25:15 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 990)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:25:15 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 990)
+
+
+Started PUT "/api/v1/utenti/1" for 127.0.0.1 at 2024-06-08 21:25:39 +0200
+Processing by Api::V1::UtentiController#update as HTML
+  Parameters: {"nome"=>"", "cognome"=>"", "username"=>"admin@site.com", "password"=>"[FILTERED]", "data_nascita"=>"", "id"=>"1", "utenti"=>{"username"=>"admin@site.com", "password"=>"[FILTERED]", "nome"=>"", "cognome"=>"", "data_nascita"=>""}}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:52:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+  [1m[36mUtenti Update (1.3ms)[0m  [1m[33mUPDATE "utentis" SET "password" = $1, "nome" = $2, "cognome" = $3, "updated_at" = $4 WHERE "utentis"."id" = $5[0m  [["password", "[FILTERED]"], ["nome", ""], ["cognome", ""], ["updated_at", "2024-06-08 19:25:39.782694"], ["id", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:54:in `update'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 2379)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:25:40 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-08 21:25:40 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 994)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:25:53 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:25:53 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:37:20 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (22.2ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: -3.6ms | ActiveRecord: 27.5ms | Allocations: 3824)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:37:21 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:42:02 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:42:02 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:44:49 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:44:49 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:45:20 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:45:20 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:45:24 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:45:24 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:46:51 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:46:52 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:49:05 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:49:05 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:50:21 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:50:21 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:52:01 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.9ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:52:01 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:52:47 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 21:52:47 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:02:39 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (31.9ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 35ms (Views: -3.5ms | ActiveRecord: 38.3ms | Allocations: 3706)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:02:39 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:02:52 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:02:52 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:03:06 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:03:06 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:03:09 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:03:09 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:03:20 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:03:20 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:28:30 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (35.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 38ms (Views: -5.9ms | ActiveRecord: 43.6ms | Allocations: 3706)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:28:30 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:29:21 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:29:21 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:33:27 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:33:27 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:34:10 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:34:10 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started PUT "/api/v1/prodotto/4" for 127.0.0.1 at 2024-06-08 22:35:22 +0200
+Processing by Api::V1::ProdottoController#update as HTML
+  Parameters: {"tipo_prodotto_id"=>"", "nome_oggetto"=>"100x buste plastificate\t", "descrizione"=>"Pacchetto di 100 buste plastificate e trasparenti, dimensioni 22x30 cm.\t", "id"=>"4", "prodotto"=>{"nome_oggetto"=>"100x buste plastificate\t", "descrizione"=>"Pacchetto di 100 buste plastificate e trasparenti, dimensioni 22x30 cm.\t", "tipo_prodotto_id"=>""}}
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos" WHERE "prodottos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:34:in `update'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 820)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:35:22 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:35:22 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:35:25 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:35:25 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:36:29 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:36:29 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.3ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:36:34 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:36:34 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto" for ::1 at 2024-06-08 22:36:41 +0200
+Processing by Api::V1::ProdottoController#index as */*
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 875)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:37:38 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (1.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:37:39 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:37:56 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:37:56 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started PUT "/api/v1/prodotto/4" for 127.0.0.1 at 2024-06-08 22:38:38 +0200
+Processing by Api::V1::ProdottoController#update as HTML
+  Parameters: {"nome_oggetto"=>"100x buste plastificate\t", "descrizione"=>"Pacchetto di 100 buste plastificate e trasparenti, dimensioni 22x30 cm.\t", "tipo_prodotto_id"=>"", "id"=>"4", "prodotto"=>{"nome_oggetto"=>"100x buste plastificate\t", "descrizione"=>"Pacchetto di 100 buste plastificate e trasparenti, dimensioni 22x30 cm.\t", "tipo_prodotto_id"=>""}}
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos" WHERE "prodottos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:34:in `update'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 747)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:38:39 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:38:39 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:38:44 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:38:44 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 873)
+
+
+Started POST "/api/v1/prodotto" for 127.0.0.1 at 2024-06-08 22:50:22 +0200
+Processing by Api::V1::ProdottoController#create as HTML
+  Parameters: {"nome_oggetto"=>"", "descrizione"=>"", "tipo_prodotto_id"=>"", "prodotto"=>{"nome_oggetto"=>"", "descrizione"=>"", "tipo_prodotto_id"=>""}}
+Completed 500 Internal Server Error in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 594)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:22 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (24.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 26ms (Views: -4.5ms | ActiveRecord: 30.6ms | Allocations: 3485)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:22 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:28 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:28 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:29 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:29 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:30 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 873)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:30 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.7ms | Allocations: 873)
+
+
+Started POST "/api/v1/prodotto" for 127.0.0.1 at 2024-06-08 22:50:41 +0200
+Processing by Api::V1::ProdottoController#create as HTML
+  Parameters: {"nome_oggetto"=>" ", "descrizione"=>" ", "tipo_prodotto_id"=>"3", "prodotto"=>{"nome_oggetto"=>" ", "descrizione"=>" ", "tipo_prodotto_id"=>"3"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTipoProdotto Load (0.7ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos" WHERE "tipo_prodottos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mProdotto Create (1.1ms)[0m  [1m[32mINSERT INTO "prodottos" ("nome_oggetto", "descrizione", "tipo_prodotto_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nome_oggetto", " "], ["descrizione", " "], ["tipo_prodotto_id", 3], ["created_at", "2024-06-08 20:50:41.527535"], ["updated_at", "2024-06-08 20:50:41.527535"]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:24:in `create'
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 13.3ms | Allocations: 2902)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:42 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:42 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started PUT "/api/v1/prodotto/7" for 127.0.0.1 at 2024-06-08 22:50:56 +0200
+Processing by Api::V1::ProdottoController#update as HTML
+  Parameters: {"nome_oggetto"=>"test", "descrizione"=>"prova prova prova", "tipo_prodotto_id"=>"", "id"=>"7", "prodotto"=>{"nome_oggetto"=>"test", "descrizione"=>"prova prova prova", "tipo_prodotto_id"=>""}}
+  [1m[36mProdotto Load (0.3ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos" WHERE "prodottos"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:34:in `update'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 748)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:56 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:50:56 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:51:00 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 22:51:00 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for ::1 at 2024-06-08 22:51:24 +0200
+Processing by Api::V1::ProdottoController#index as */*
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 928)
+
+
+Started PUT "/api/v1/prodotto/7" for ::1 at 2024-06-08 22:53:01 +0200
+Processing by Api::V1::ProdottoController#update as */*
+  Parameters: {"nome_oggetto"=>"test", "descrizione"=>"prova prova prova", "tipo_prodotto_id"=>2, "id"=>"7", "prodotto"=>{"nome_oggetto"=>"test", "descrizione"=>"prova prova prova", "tipo_prodotto_id"=>2}}
+  [1m[36mProdotto Load (0.3ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos" WHERE "prodottos"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:36:in `update'
+  [1m[36mTipoProdotto Load (0.3ms)[0m  [1m[34mSELECT "tipo_prodottos".* FROM "tipo_prodottos" WHERE "tipo_prodottos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:36:in `update'
+  [1m[36mProdotto Update (0.7ms)[0m  [1m[33mUPDATE "prodottos" SET "nome_oggetto" = $1, "descrizione" = $2, "tipo_prodotto_id" = $3, "updated_at" = $4 WHERE "prodottos"."id" = $5[0m  [["nome_oggetto", "test"], ["descrizione", "prova prova prova"], ["tipo_prodotto_id", 2], ["updated_at", "2024-06-08 20:53:01.283332"], ["id", 7]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:36:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:36:in `update'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 3296)
+
+
+Started GET "/api/v1/prodotto" for ::1 at 2024-06-08 22:53:10 +0200
+Processing by Api::V1::ProdottoController#index as */*
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 928)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:12:36 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (26.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: -2.8ms | ActiveRecord: 32.1ms | Allocations: 3784)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:12:37 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.8ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:12:37 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.6ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:12:37 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started PUT "/api/v1/prodotto/7" for 127.0.0.1 at 2024-06-08 23:12:56 +0200
+Processing by Api::V1::ProdottoController#update as HTML
+  Parameters: {"nome_oggetto"=>"test1111111", "descrizione"=>"111111111111", "tipo_prodotto_id"=>"", "id"=>"7", "prodotto"=>{"nome_oggetto"=>"test1111111", "descrizione"=>"111111111111", "tipo_prodotto_id"=>""}}
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos" WHERE "prodottos"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:34:in `update'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 772)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:12:56 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:12:56 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:16:52 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:16:53 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 926)
+
+
+Started PUT "/api/v1/prodotto/7" for 127.0.0.1 at 2024-06-08 23:17:14 +0200
+Processing by Api::V1::ProdottoController#update as HTML
+  Parameters: {"nome_oggetto"=>"test1123123131", "descrizione"=>"12312321321231", "tipo_prodotto_id"=>"2", "id"=>"7", "prodotto"=>{"nome_oggetto"=>"test1123123131", "descrizione"=>"12312321321231", "tipo_prodotto_id"=>"2"}}
+  [1m[36mProdotto Load (0.3ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos" WHERE "prodottos"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:36:in `update'
+  [1m[36mProdotto Update (2.8ms)[0m  [1m[33mUPDATE "prodottos" SET "nome_oggetto" = $1, "descrizione" = $2, "updated_at" = $3 WHERE "prodottos"."id" = $4[0m  [["nome_oggetto", "test1123123131"], ["descrizione", "12312321321231"], ["updated_at", "2024-06-08 21:17:14.765133"], ["id", 7]]
+  ↳ app/controllers/api/v1/prodotto_controller.rb:36:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:36:in `update'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 4.2ms | Allocations: 2373)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:17:15 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-08 23:17:15 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms | Allocations: 927)
+
+

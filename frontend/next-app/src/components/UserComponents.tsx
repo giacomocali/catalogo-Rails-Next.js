@@ -1,13 +1,5 @@
 import { sendUpdateUser } from "@/app/usersview/sendUpdateUser";
 
-interface userData {
-  username: string;
-  password: string;
-  nome: string;
-  cognome: string;
-  data_nascita: string;
-}
-
 // function modify(user) {
 //   redirect("/updateuser");
 // }
@@ -126,8 +118,6 @@ export function Header() {
   );
 }
 
-
-
 export function editUserForm(setShowEditUser) {
   // "use client"
   // useEffect(() => {
@@ -141,7 +131,11 @@ export function editUserForm(setShowEditUser) {
     <>
       <div className="d-flex justify-content-center mt-5" id="editUser">
         <form
-          action={(fd:FormData)=>sendUpdateUser(fd, currentUser.id)}
+          action={(fd: FormData) => {
+            sendUpdateUser(fd, currentUser.id);
+            setShowEditUser(false);
+            location.reload();
+          }}
           className="mw-50 shadow p-4 rounded-4"
         >
           <h5 className="text-center my-4">Aggiorna i dati dell'utente:</h5>
