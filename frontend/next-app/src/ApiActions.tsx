@@ -1,8 +1,8 @@
-// FUNZIONI PER CHIAMARE L'API DI RAILS
 "use server";
 
 import axios, { AxiosResponse } from "axios";
-import { URL } from "url";
+import { cookies } from "next/headers";
+import { loadPageDelayed } from "./loadPageDelayed";
 
 interface selectedUser {
   data: {
@@ -17,38 +17,29 @@ interface selectedUser {
   };
 }
 
-interface createdUser {
-  data: {
-    username: string;
-    password: string;
-    nome: string;
-    cognome: string;
-    data_nascita: string;
-  };
-}
+export async function checkLogin(body) {
 
-export async function checkLogin(formData: FormData) {
-  var providedUsername: string =
-    formData.get("username")?.valueOf().toString() ?? " ";
-
-  const providedPassword: string =
-    formData.get("password")?.valueOf().toString() ?? " ";
-
-  // providedUsername = encodeURIComponent(providedUsername);
+  const providedUsername = body.username;
+  const providedPassword = body.password;
 
   const address = `http://localhost:3000/api/v1/utenti/show?username=${providedUsername}`;
-  console.log(providedUsername);
 
   try {
     const response: selectedUser = await axios.get(address);
     console.log("==================");
     const { data } = response;
     var passwordOk: boolean = providedPassword === data.password;
-    return passwordOk;
+
+    if (passwordOk) {
+      cookies().set("loggedin", "true");
+      return [true];
+    } else {
+      return [false, 'Password invalida.'];
+    }
   } catch (err) {
     console.error("ERRORE! Qualcosa è andato storto chiamando l'API");
     console.error(err);
-    return false;
+    return [false, 'Errore del server']
   }
 }
 

@@ -1,4 +1,5 @@
 import { sendUpdateUser } from "@/app/usersview/sendUpdateUser";
+import { logOut } from "@/logOut";
 
 // function modify(user) {
 //   redirect("/updateuser");
@@ -105,9 +106,9 @@ export function Header() {
               </div>
               <div className="it-header-slim-right-zone">
                 <div className="it-access-top-wrapper">
-                  <a className="btn btn-primary" href="/">
+                  <button className="btn btn-primary" onClick={()=>logOut()}>
                     Logout ↦
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
