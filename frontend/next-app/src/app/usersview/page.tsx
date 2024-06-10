@@ -12,6 +12,7 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import "../../../node_modules/bootstrap-italia/dist/css/bootstrap-italia.min.css";
 import "../../../node_modules/bootstrap-italia/dist/js/bootstrap-italia.min.js";
+import { redirect } from "next/navigation";
 
 export default function UsersView() {
   const [users, setUsers] = useState([]);
@@ -46,7 +47,7 @@ export default function UsersView() {
       
       <button
         className="btn btn-success p-2 m-2 rounded-3"
-        onClick={() => loadPageDelayed("/adduser", 1000)}
+        onClick={()=>{loadPageDelayed("/adduser",1000)}}
       >
         Aggiungi utente +
       </button>
@@ -69,6 +70,7 @@ export default function UsersView() {
         <tbody>
           {users.map((user) => (
             <UserRow
+              key={crypto.randomUUID()}
               user={user}
               removeUser={removeUser}
               f={changeShowEditUser}

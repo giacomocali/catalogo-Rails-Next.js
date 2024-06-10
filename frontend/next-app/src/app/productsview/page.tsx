@@ -25,8 +25,7 @@ export default function ProductsView() {
     loadProducts();
   }, []);
 
-
-  function changeShowEditProduct(value:boolean){
+  function changeShowEditProduct(value: boolean) {
     setShowEditProduct(value);
   }
 
@@ -44,7 +43,7 @@ export default function ProductsView() {
 
       <button
         className="btn btn-success p-2 m-2 rounded-3"
-        onClick={() => loadPageDelayed("/addproduct",500)}
+        onClick={() => loadPageDelayed("/addproduct", 500)}
       >
         Aggiungi utente +
       </button>
@@ -64,7 +63,12 @@ export default function ProductsView() {
         </thead>
         <tbody>
           {products.map((product) => (
-            <ProductRow product={product} removeProduct={removeProduct} showEditDialog={changeShowEditProduct}/>
+            <ProductRow
+              key={crypto.randomUUID()}
+              product={product}
+              removeProduct={removeProduct}
+              showEditDialog={changeShowEditProduct}
+            />
           ))}
         </tbody>
       </table>

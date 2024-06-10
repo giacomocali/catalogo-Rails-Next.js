@@ -1,12 +1,11 @@
-// INTERFACCIA DI AGGIUNTA UTENTI
+// INTERFACCIA DI AGGIUNTA PRODOTTI
 import { Header } from "@/components/ProductComponents";
 import { createProduct } from "@/ApiActions";
-import { loadPageDelayed } from "@/loadPageDelayed";
 import { redirect } from "next/navigation";
 
 async function sendCreateProduct(data: FormData) {
   "use server";
-  const productToSend={
+  const productToSend = {
     nome_oggetto: data.get("nome_oggetto"),
     descrizione: data.get("descrizione"),
     tipo_prodotto_id: data.get("tipo_prodotto_id"),
@@ -14,7 +13,7 @@ async function sendCreateProduct(data: FormData) {
   
   const success: boolean = await createProduct(productToSend);
   if (success) {
-    redirect("productsview");
+    redirect("/productsview");
   } else {
     console.error("CREAZIONE UTENTE FALLITA");
   }
@@ -61,7 +60,7 @@ export default function Home() {
   );
 }
 
-export function AddProductInput({ type, identifier, label }) {
+function AddProductInput({ type, identifier, label }) {
   return (
     <div className="mb-4">
       <p className="m-0 p-0"> {label} </p>

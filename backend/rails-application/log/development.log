@@ -15756,3 +15756,403 @@ Processing by Api::V1::UtentiController#index as HTML
 Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 994)
 
 
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-09 23:45:34 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 272ms (Views: 0.8ms | ActiveRecord: 17.7ms | Allocations: 146869)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-09 23:45:36 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1152)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-09 23:45:36 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-09 23:48:17 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1009)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-09 23:48:17 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti/show?username=admin@site.com" for 127.0.0.1 at 2024-06-10 00:13:59 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"admin@site.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "admin@site.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 35ms (Views: 0.5ms | ActiveRecord: 4.7ms | Allocations: 3696)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:14:00 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.9ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:14:00 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:14:34 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:14:34 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:14:40 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (1.0ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 1.0ms | Allocations: 1009)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:14:40 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:16:58 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:16:58 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:17:45 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.9ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:17:45 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 994)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 00:24:29 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (19.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 13.2ms | ActiveRecord: 27.9ms | Allocations: 46070)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 00:24:29 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 942)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:24:33 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.8ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1022)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:24:34 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 994)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 00:24:35 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 00:24:35 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 926)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:24:38 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:24:38 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:25:39 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:25:39 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.6ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:27:54 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 00:27:54 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:03:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (1.8ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 178ms (Views: 115.8ms | ActiveRecord: 12.8ms | Allocations: 146187)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:03:10 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.8ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 1100)
+
+
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-10 12:03:46 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 3018)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:03:47 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 1031)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:03:47 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti/show?username=a@gmail.com" for 127.0.0.1 at 2024-06-10 12:04:20 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"a@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "a@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 593)
+
+
+Started GET "/api/v1/utenti/show?username=a@gmail.com" for 127.0.0.1 at 2024-06-10 12:04:47 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"a@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "a@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 581)
+
+
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-10 12:07:51 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 632)
+
+
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-10 12:11:15 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.4ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 630)
+
+
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-10 12:11:36 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 632)
+
+
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-10 12:11:47 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.3ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 630)
+
+
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-10 12:11:51 +0200
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.2ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 630)
+
+
+Started GET "/api/v1/utenti/show?username=matteospiga@gmail.com" for 127.0.0.1 at 2024-06-10 12:34:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UtentiController#show as HTML
+  Parameters: {"username"=>"matteospiga@gmail.com", "id"=>"show"}
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis" WHERE "utentis"."username" = $1 LIMIT $2[0m  [["username", "matteospiga@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/utenti_controller.rb:24:in `show'
+Completed 200 OK in 204ms (Views: 0.9ms | ActiveRecord: 18.0ms | Allocations: 146870)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:34:46 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (1.1ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 1.0ms | Allocations: 1152)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:34:46 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 994)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 12:35:54 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (2.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 39ms (Views: 26.5ms | ActiveRecord: 8.1ms | Allocations: 43082)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 12:35:54 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms | Allocations: 958)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 12:36:00 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.5ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 926)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 12:36:00 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.4ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 926)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:36:06 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms | Allocations: 1001)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:36:06 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 994)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:37:58 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1009)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 12:37:58 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.5ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms | Allocations: 994)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 16:00:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.7ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 173ms (Views: 120.9ms | ActiveRecord: 14.9ms | Allocations: 123554)
+
+
+Started GET "/api/v1/prodotto/" for 127.0.0.1 at 2024-06-10 16:00:33 +0200
+Processing by Api::V1::ProdottoController#index as HTML
+  [1m[36mProdotto Load (0.6ms)[0m  [1m[34mSELECT "prodottos".* FROM "prodottos"[0m
+  ↳ app/controllers/api/v1/prodotto_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 1032)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 16:00:38 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (1.1ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 37ms (Views: 30.7ms | ActiveRecord: 4.7ms | Allocations: 65683)
+
+
+Started GET "/api/v1/utenti" for 127.0.0.1 at 2024-06-10 16:00:38 +0200
+Processing by Api::V1::UtentiController#index as HTML
+  [1m[36mUtenti Load (0.7ms)[0m  [1m[34mSELECT "utentis".* FROM "utentis"[0m
+  ↳ app/controllers/api/v1/utenti_controller.rb:18:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 1010)
+
+

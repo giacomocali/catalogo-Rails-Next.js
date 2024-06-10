@@ -18,7 +18,6 @@ interface selectedUser {
 }
 
 export async function checkLogin(body) {
-
   const providedUsername = body.username;
   const providedPassword = body.password;
 
@@ -32,14 +31,14 @@ export async function checkLogin(body) {
 
     if (passwordOk) {
       cookies().set("loggedin", "true");
-      return [true];
+      return [true, "Login effettuato con successo"];
     } else {
-      return [false, 'Password invalida.'];
+      return [false, "Password invalida"];
     }
   } catch (err) {
     console.error("ERRORE! Qualcosa è andato storto chiamando l'API");
     console.error(err);
-    return [false, 'Errore del server']
+    return [false, "Errore del server"];
   }
 }
 
@@ -150,11 +149,4 @@ export async function removeProduct(id) {
   } catch (error) {
     console.error(error);
   }
-}
-
-function businessLogicChecks(k: any): boolean {
-  if (k === "" || k === " " || k === null || k === undefined) {
-    return false;
-  }
-  return true;
 }

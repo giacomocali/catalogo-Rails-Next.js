@@ -144,7 +144,7 @@ export function editProductForm(showEditDialog) {
           }}
           className="mw-50 shadow p-4 rounded-4"
         >
-          <h5 className="text-center my-4">Aggiorna i dati dell'utente:</h5>
+          <h5 className="text-center my-4">Aggiorna i dati dell`&apos`utente:</h5>
           <div className="form-group">
             <UpdateProductInput
               type={"text"}

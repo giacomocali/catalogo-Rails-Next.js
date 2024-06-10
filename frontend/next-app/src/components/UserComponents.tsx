@@ -86,8 +86,7 @@ export function Header() {
                     <ul className="link-list">
                       <li>
                         <a className="list-item active" href="#">
-                          {" "}
-                          Utenti{" "}
+                          Utenti
                         </a>
                       </li>
                       <li>
@@ -96,8 +95,7 @@ export function Header() {
                           href="/productsview"
                           aria-current="page"
                         >
-                          {" "}
-                          Prodotti{" "}
+                          Prodotti
                         </a>
                       </li>
                     </ul>
@@ -129,7 +127,6 @@ export function editUserForm(setShowEditUser) {
   // }, []);
 
   return (
-    <>
       <div className="d-flex justify-content-center mt-5" id="editUser">
         <form
           action={(fd: FormData) => {
@@ -139,7 +136,7 @@ export function editUserForm(setShowEditUser) {
           }}
           className="mw-50 shadow p-4 rounded-4"
         >
-          <h5 className="text-center my-4">Aggiorna i dati dell'utente:</h5>
+          <h5 className="text-center my-4">Aggiorna i dati dell`&apos`utente:</h5>
           <div className="form-group">
             <UpdateUserInput
               type={"text"}
@@ -184,7 +181,6 @@ export function editUserForm(setShowEditUser) {
           </button>
         </form>
       </div>
-    </>
   );
 }
 

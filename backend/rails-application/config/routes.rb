@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
   namespace :api do
     namespace :v1 do
       resources :tipo_prodotto, only: [:index, :show, :create, :update, :destroy]

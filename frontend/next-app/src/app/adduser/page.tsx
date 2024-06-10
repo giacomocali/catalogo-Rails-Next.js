@@ -16,7 +16,7 @@ async function sendCreateUser(data: FormData) {
 
   const success: boolean = await createUser(userToSend);
   if (success) {
-    redirect("usersview");
+    redirect("/usersview");
   } else {
     console.error("CREAZIONE UTENTE FALLITA");
   }
@@ -30,8 +30,7 @@ export default function Home() {
       <div className="d-flex justify-content-center mt-5">
         <form action={sendCreateUser} className="mw-50 shadow p-4 rounded-4">
           <h5 className="text-center my-4">
-            {" "}
-            Inserisci i dati del nuovo utente:{" "}
+            Inserisci i dati del nuovo utente:
           </h5>
           <div className="form-group">
             <AddUserInput
@@ -56,6 +55,12 @@ export default function Home() {
               label={"Data di nascita"}
             />
           </div>
+          <small>
+            <em>
+              La password deve essere lunga almeno 8 caratteri <br /> e avere
+              almeno una lettera maiuscola <br /> e un carattere speciale.
+            </em>
+          </small>
           <button type="submit" className="btn btn-primary mx-2 rounded-3">
             Invia
           </button>
@@ -72,7 +77,7 @@ export default function Home() {
   );
 }
 
-export function AddUserInput({ type, identifier, label }) {
+function AddUserInput({ type, identifier, label }) {
   return (
     <div className="mb-4">
       <p className="m-0 p-0"> {label} </p>
