@@ -14,6 +14,7 @@ export default function Home() {
   const [success, setSuccess] = useState(false);
   const [successChanged, setSuccessChanged] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
+
   useEffect(()=>{
     console.log("success status changed")
     setSuccessChanged(true);

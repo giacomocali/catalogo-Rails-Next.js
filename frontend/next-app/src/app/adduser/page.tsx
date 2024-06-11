@@ -4,6 +4,11 @@ import { createUser } from "@/ApiActions";
 import { loadPageDelayed } from "@/loadPageDelayed";
 import { redirect } from "next/navigation";
 
+function passwordCheck(pass: string) {
+  const regex = /^(?=.*[A-Z])(?=.*[@!()-_+:<>])(?=.{8,})/;
+  return regex.test(pass);
+}
+
 async function sendCreateUser(data: FormData) {
   "use server";
   const userToSend = {
@@ -13,6 +18,10 @@ async function sendCreateUser(data: FormData) {
     password: data.get("password"),
     data_nascita: data.get("data_nascita"),
   };
+  if (!passwordCheck(userToSend.password as string)) {
+    console.error("La password non rispetta i requisiti richiesti");
+    return;
+  }
 
   const success: boolean = await createUser(userToSend);
   if (success) {
