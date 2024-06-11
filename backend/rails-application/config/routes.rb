@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :prodotto, only: [:index, :show, :create, :update, :destroy]
       resources :utenti
       get 'show', to: 'utenti#show'
+      resources :sessions
+      get 'create' to: 'sessions#create'
     end
   end
   get "up" => "rails/health#show", as: :rails_health_check
