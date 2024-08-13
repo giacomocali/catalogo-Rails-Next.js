@@ -1,2 +1,5 @@
-Progetto web di prova per Eramus S.r.l.
-Applicazione web realizzata con Next.js, Ruby on Rails, Postgresql, e infine Bootstrap Italia per lo stile.
+Progetto web esperimento. Sono stati usati:
++ Ruby On Rails
++ Next.js
++ PostgreSQL
++ Bootstrap Italia
